@@ -32,7 +32,7 @@
         outline: none;
         width: 370px;
         position: relative;
-        background-image: url(/img/composite.png);
+        background-image: url(../img/composite.png);
         background-size: 20px;
         background-repeat: no-repeat;
         background-position-y: 50%;
@@ -267,6 +267,121 @@
       &-block {
         &:nth-child(n + 4) {
           display: none;
+        }
+      }
+    }
+  }
+}
+
+.hiw {
+  &__content {
+    max-width: 420px;
+    .h3-content {
+      padding-top: 35px;
+      padding-bottom: 70px;
+    }
+  }
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-block {
+      &:nth-child(2) {
+        margin: 0px 35px;
+      }
+      -webkit-box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.1);
+      .title {
+        margin: 0px 40px;
+        span {
+          @include text(100px, M Bold, normal, $black-cl, uppercase);
+        }
+        p {
+          @include text(18px, M SemiB, normal, $blue-cl, null);
+        }
+      }
+      .content {
+        padding-top: 30px;
+        padding-bottom: 65px;
+        margin: 0px 60px 0px 70px;
+        @include transition($t);
+        p {
+          @include text(13px, M Reg, 30px, $blue-cl, null);
+          font-weight: bold;
+          padding-bottom: 15px;
+        }
+        a {
+          @include text(13px, M Bold, normal, $blue-cl, null);
+          position: relative;
+          &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $blue-cl;
+            bottom: -5px;
+            left: 0;
+          }
+        }
+      }
+      &:hover {
+        background-color: $yellow-cl;
+        @include transition($t);
+        .title > span,
+        p {
+          color: $white-cl;
+          @include transition($t);
+        }
+        .content > p,
+        a {
+          color: $white-cl;
+          @include transition($t);
+          &::after {
+            background-color: $white-cl;
+          }
+        }
+      }
+      &.active {
+        background-color: $yellow-cl;
+        @include transition($t);
+        .title > span,
+        p {
+          color: $white-cl;
+          @include transition($t);
+        }
+        .content > p,
+        a {
+          color: $white-cl;
+          @include transition($t);
+          &::after {
+            background-color: $white-cl;
+          }
+        }
+      }
+    }
+  }
+}
+@include sm {
+  .hiw {
+    &__items {
+      &-block {
+        .content {
+          margin: 0px 40px;
+          padding-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+@include xs {
+  .hiw {
+    &__items {
+      flex-direction: column;
+      &-block {
+        box-shadow: none;
+        text-align: center;
+        &:nth-child(2) {
+          margin: 35px 0px;
         }
       }
     }

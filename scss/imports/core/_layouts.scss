@@ -43,9 +43,11 @@ body {
     margin-right: auto;
     margin-left: auto;
     &.pd-top {
-      padding: var(--ptop) 0px;
+      padding-top: var(--ptop);
+      padding-bottom: var(--ptop);
       @include xs {
-        padding: 70px 0px;
+        padding-top: 70px;
+        padding-bottom: 70px;
       }
     }
   }
