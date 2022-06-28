@@ -142,6 +142,13 @@ article {
 }
 .h4-title {
   @include text(15px, M SemiB, normal, $blue-cl, null);
+  &.--fs25 {
+    @include text(25px, M SemiB, normal, $blue-cl, null);
+  }
+}
+.h4-content {
+  @include text(13px, M Reg, normal, $blue-cl, null);
+  font-weight: bold;
 }
 .appartments {
   &__items {
