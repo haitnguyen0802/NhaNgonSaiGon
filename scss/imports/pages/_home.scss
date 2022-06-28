@@ -56,7 +56,7 @@
       font-size: 18px;
       position: absolute;
       bottom: 0;
-      right: 0;
+      right: 15px;
       height: 70px;
       background-color: $yellow-cl;
       a {
@@ -234,9 +234,16 @@
     margin: 50px auto 0px;
     background: #fff;
     text-align: center;
+    @include transition($t);
+    border-radius: 5px;
+    cursor: pointer;
     a {
       @include text(15px, M Reg, normal, $blue-cl, null);
       font-weight: bold;
+    }
+    &:hover {
+      background-color: $yellow-cl;
+      @include transition($t);
     }
   }
 }
@@ -451,6 +458,71 @@
         padding-top: 20px;
         .h4-content {
           padding: 20px 0px 30px;
+        }
+      }
+    }
+  }
+}
+
+.agents {
+  background-color: $gray-cl !important;
+  .h3-title {
+    width: 360px;
+  }
+  .h3-content {
+    width: 420px;
+    padding: 40px 0px 60px;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    &-block {
+      -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+      width: calc(100% / 3);
+      cursor: pointer;
+      .img {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 365px;
+        img {
+          position: absolute;
+          min-height: 100%;
+          min-width: 100%;
+          top: 50%;
+          left: 50%;
+          object-fit: cover;
+          @include transform(translate(-50%, -50%) scale(1));
+          @include transition($t);
+          &:hover {
+            @include transform(translate(-50%, -50%) scale(1.1));
+            @include transition($t);
+          }
+        }
+      }
+      .descript {
+        margin: 20px 20px 30px 20px;
+        span {
+          @include text(15px, M SemiB, normal, $blue-cl, null);
+        }
+        &-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 15px;
+          span {
+            color: $yellow-cl;
+          }
+          .social {
+            display: inline-flex;
+            align-items: center;
+            img {
+              &:nth-child(2) {
+                padding: 0px 20px;
+              }
+            }
+          }
         }
       }
     }
