@@ -397,6 +397,7 @@
 
 .services {
   background-color: $white-cl !important;
+  padding-bottom: 80px;
   &__title {
     .h3-content {
       max-width: 420px;
@@ -424,6 +425,7 @@
 }
 @include sm {
   .services {
+    padding-bottom: 80px;
     &__content {
       flex-direction: column;
       &-img {
@@ -523,6 +525,192 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+@include sm {
+  .agents {
+    &__items {
+      &-block {
+        .descript {
+          text-align: center;
+          &-info {
+            flex-direction: column;
+            .social {
+              width: 100%;
+              justify-content: space-evenly;
+              padding-top: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include xs {
+  .agents {
+    &__title {
+      .h3-content {
+        width: 400px;
+      }
+    }
+    &__items {
+      flex-direction: column;
+      row-gap: 30px;
+      &-block {
+        width: unset;
+        background-color: $white-cl;
+      }
+    }
+  }
+}
+
+.awesome {
+  background-color: $white-cl !important;
+  &-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    &:nth-child(2) {
+      flex-direction: unset;
+      margin: 90px 0px;
+      .awesome__title {
+        text-align: right;
+        .h3-title {
+          width: unset;
+        }
+      }
+    }
+    &:last-child {
+      align-items: unset;
+      .awesome__items {
+        &-button {
+          display: none;
+        }
+      }
+    }
+  }
+  &__title {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .h3-title {
+      padding-bottom: 25px;
+      width: max-content;
+    }
+    &-button {
+      background-color: $blue-cl;
+      display: inline-flex;
+      a {
+        @include text(18px, M SemiB, normal, $white-cl, null);
+        padding: 35px 55px;
+      }
+    }
+  }
+  &__items {
+    width: 50%;
+    position: relative;
+    &-button {
+      background-color: $yellow-cl;
+      display: inline-flex;
+      position: absolute;
+      bottom: -25px;
+      left: 35px;
+      a {
+        @include text(18px, M SemiB, normal, $blue-cl, null);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 30px;
+        padding: 25px 55px;
+      }
+    }
+  }
+}
+@include sm {
+  .awesome {
+    &-wrap {
+      &:last-child {
+        flex-direction: column-reverse;
+        .awesome__title {
+          width: unset;
+          padding-top: 50px;
+          .h3-title {
+            padding-bottom: unset;
+          }
+          .h3-content {
+            padding: 30px 0px;
+          }
+          &-button {
+            display: inline-flex;
+            background-color: unset;
+            justify-content: center;
+            a {
+              background-color: $blue-cl;
+            }
+          }
+        }
+        .awesome__items {
+          width: unset;
+          &-img {
+            img {
+              @include size(100%, 100%);
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include xs {
+  .awesome {
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+    &-wrap {
+      flex-direction: column-reverse;
+      &:nth-child(2) {
+        flex-direction: column-reverse;
+        margin: 40px 0px;
+        .awesome__title {
+          text-align: center;
+          .h3-title {
+            width: 100%;
+          }
+        }
+      }
+      &:last-child {
+        .awesome__title {
+          padding: 20px 0px;
+          &-button {
+            a {
+              padding: 15px 20px;
+            }
+          }
+        }
+      }
+    }
+    &__title {
+      width: 100%;
+      text-align: center;
+      padding-top: 20px;
+      .h3-title {
+        width: 100%;
+      }
+    }
+    &__items {
+      width: 100%;
+      &-button {
+        bottom: 7px;
+        left: 0;
+        a {
+          padding: 15px 20px;
         }
       }
     }
