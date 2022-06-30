@@ -603,11 +603,11 @@
       width: max-content;
     }
     &-button {
-      background-color: $blue-cl;
       display: inline-flex;
       a {
+        background-color: $blue-cl;
         @include text(18px, M SemiB, normal, $white-cl, null);
-        padding: 35px 55px;
+        padding: 30px 55px;
       }
     }
   }
