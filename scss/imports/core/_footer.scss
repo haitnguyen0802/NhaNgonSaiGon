@@ -1,1 +1,130 @@
 // css footer
+.footer {
+  background-color: $blue-cl;
+  @include text(40px, M Bold, normal, $white-cl, null);
+  .container {
+    padding-top: 70px !important;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $gray-cl;
+      bottom: -50px;
+    }
+    h2 {
+      width: 50%;
+    }
+    .direct {
+      width: 50%;
+      height: 70px;
+      position: relative;
+      input {
+        width: 50%;
+        font-size: 15px;
+        font-family: M Reg;
+        font-weight: bold;
+        height: 70px;
+        width: 100%;
+        padding-left: 30px;
+      }
+      img {
+        position: absolute;
+        right: 35px;
+        top: 50%;
+        cursor: pointer;
+        @include transform(translateY(-50%));
+      }
+    }
+  }
+  &__body {
+    display: flex;
+    margin-top: 120px;
+    span {
+      font-size: 14px;
+      font-family: M Reg;
+    }
+    &-items {
+      h5 {
+        @include text(15px, M Reg, normal, #919eb1, uppercase);
+      }
+      ul {
+        padding-top: 15px;
+        li {
+          @include text(13px, M Reg, normal, $white-cl, null);
+          width: max-content;
+          height: 20px;
+          margin: 15px 0px;
+          a {
+            color: $white-cl;
+            font-weight: bold;
+          }
+        }
+      }
+      &:first-child {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        a {
+          display: inline-flex;
+        }
+        span {
+          line-height: 25px;
+          width: 140px;
+          flex: 1;
+          display: inline-flex;
+          align-items: center;
+        }
+      }
+      &:nth-child(n + 2) {
+        width: 20%;
+      }
+    }
+  }
+}
+@include xs {
+  .footer {
+    &__header {
+      h2 {
+        width: 100%;
+      }
+      .direct {
+        display: none;
+      }
+    }
+    &__body {
+      flex-direction: row;
+      flex-wrap: wrap;
+      &-items {
+        text-align: center;
+        ul {
+          li {
+            margin: 10px auto;
+          }
+        }
+        &:first-child {
+          padding-top: 15px;
+          order: 1;
+          flex: 1;
+          flex-direction: row;
+          a {
+            align-items: center;
+          }
+          span {
+            flex: unset;
+            width: unset;
+          }
+        }
+        &:nth-child(n + 2) {
+          width: 25%;
+        }
+      }
+    }
+  }
+}
