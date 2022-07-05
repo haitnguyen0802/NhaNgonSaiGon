@@ -141,6 +141,44 @@
       position: fixed;
     }
   }
+  &.active {
+    position: fixed;
+    background-color: $white-cl;
+    width: 100%;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    &.ani_ToptoBottom {
+      opacity: 1;
+      visibility: visible;
+      animation: ToptoBottom 0.3s ease 0s 1 normal forwards;
+      @keyframes ToptoBottom {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+    &.ani_BottomtoTop {
+      animation: BottomtoTop 0.3s ease 0s 1 normal forwards;
+      @keyframes BottomtoTop {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+      }
+    }
+  }
   @include sm {
     .nav {
       display: none;
