@@ -15,7 +15,7 @@ window.addEventListener("scroll", function (event) {
   } else {
     heightHeader.classList.replace("ani_ToptoBottom", "ani_BottomtoTop");
   }
-  if (this.window.pageYOffset > 200 && this.window.pageYOffset < 500) {
+  if (this.window.pageYOffset > 200 && this.window.pageYOffset < 550) {
     if (heightHeader.classList.contains("ani_BottomtoTop")) {
       heightHeader.classList.remove("ani_BottomtoTop");
     }
