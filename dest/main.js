@@ -2,7 +2,7 @@
 let heightHeader = document.querySelector(".header");
 const mainWrapper = document.querySelector(".mainwrapper");
 window.addEventListener("scroll", function (event) {
-  console.log(this.window.pageYOffset);
+  console.log(window.pageYOffset);
   if (this.window.pageYOffset >= 200) {
     mainWrapper.classList.add("active");
     heightHeader.classList.add("active");
@@ -15,7 +15,7 @@ window.addEventListener("scroll", function (event) {
   } else {
     heightHeader.classList.replace("ani_ToptoBottom", "ani_BottomtoTop");
   }
-  if (this.window.pageYOffset > 200 && this.window.pageYOffset < 400) {
+  if (this.window.pageYOffset > 200 && this.window.pageYOffset < 500) {
     if (heightHeader.classList.contains("ani_BottomtoTop")) {
       heightHeader.classList.remove("ani_BottomtoTop");
     }
