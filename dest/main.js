@@ -2,7 +2,6 @@
 let heightHeader = document.querySelector(".header");
 const mainWrapper = document.querySelector(".mainwrapper");
 window.addEventListener("scroll", function (event) {
-  console.log(window.pageYOffset);
   if (this.window.pageYOffset >= 200) {
     mainWrapper.classList.add("active");
     heightHeader.classList.add("active");
@@ -21,13 +20,36 @@ window.addEventListener("scroll", function (event) {
     }
   }
 });
+
 //Btn Menu Header
 let menuBtn = document.querySelector(".header .header__btnmenu");
 let mainMenu = document.querySelector(".header .container .nav");
 
-menuBtn.addEventListener("click", function (element) {
+menuBtn.addEventListener("click", function (event) {
   menuBtn.classList.toggle("active");
   mainMenu.classList.toggle("active");
+});
+
+// Stop stopPropagation
+menuBtn.addEventListener("click", disable);
+function preventScroll(e) {
+  e.preventDefault();
+  e.stopPropagation();
+}
+function disable() {
+  document
+    .querySelector(".header .container .nav")
+    .addEventListener("wheel", preventScroll);
+}
+
+// Resize mainMenu
+window.addEventListener("resize", function (event) {
+  if (this.window.innerWidth > 414) {
+    if (mainMenu.classList.contains("active")) {
+      menuBtn.classList.remove("active");
+      mainMenu.classList.remove("active");
+    }
+  }
 });
 
 //Hiw Selected
