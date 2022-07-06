@@ -1,6 +1,16 @@
 // css header
+
 .header {
   height: var(--height-header);
+  background-color: $white-cl;
+  width: 100%;
+  // transform: translate(0, -70px);
+  // transition: 0.4s transform;
+  z-index: 111;
+  // &.activeHeader {
+  //   transform: translate(0, 0);
+  //   transition: 0.4s transform;
+  // }
   .container {
     @include mid(true);
     justify-content: space-between;
@@ -20,7 +30,7 @@
           li {
             padding: 7px 15px;
             border-radius: 5px;
-            @include transition($t);
+            // @include transition($t);
             &:hover {
               @include transition($t);
               background-color: $yellow-cl;
@@ -30,7 +40,7 @@
               color: $blue-cl;
               font-weight: bold;
               padding: 50px 0px;
-              @include transition($t);
+              // @include transition($t);
               position: relative;
               &::after {
                 position: absolute;
@@ -51,6 +61,23 @@
                   @include transform-origin(left center);
                   @include transform(scaleX(1));
                   @include transition($t);
+                }
+              }
+            }
+            &.active {
+              background-color: $yellow-cl;
+              a {
+                color: $white-cl;
+                position: relative;
+                &::after {
+                  position: absolute;
+                  content: "";
+                  left: 0;
+                  bottom: 46px;
+                  width: 100%;
+                  height: 2px;
+                  background-color: $white-cl;
+                  @include transform(scaleX(1));
                 }
               }
             }
