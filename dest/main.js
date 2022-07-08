@@ -1,9 +1,7 @@
 //Test Height
-
-// window.addEventListener("scroll", function () {
-//   console.log(this.window.pageYOffset);
-// });
-
+window.addEventListener("scroll", function () {
+  console.log(this.scrollY);
+});
 // Height Header
 let heightHeader = document.querySelector(".header");
 const mainWrapper = document.querySelector(".mainwrapper");
@@ -15,12 +13,20 @@ window.addEventListener("scroll", function (event) {
     mainWrapper.classList.remove("active");
     heightHeader.classList.remove("active", "ani_BottomtoTop");
   }
-  if (this.window.pageYOffset >= 600) {
-    heightHeader.classList.add("active", "ani_ToptoBottom");
-  } else {
-    heightHeader.classList.replace("ani_ToptoBottom", "ani_BottomtoTop");
+  if (this.window.innerWidth <= 414) {
+    if (this.window.pageYOffset >= 400) {
+      heightHeader.classList.add("active", "ani_ToptoBottom");
+    } else {
+      heightHeader.classList.replace("ani_ToptoBottom", "ani_BottomtoTop");
+    }
+  } else if (this.window.innerWidth > 414) {
+    if (this.window.pageYOffset >= 600) {
+      heightHeader.classList.add("active", "ani_ToptoBottom");
+    } else {
+      heightHeader.classList.replace("ani_ToptoBottom", "ani_BottomtoTop");
+    }
   }
-  if (this.window.pageYOffset > 200 && this.window.pageYOffset < 300) {
+  if (this.window.pageYOffset > 200 && this.window.pageYOffset < 500) {
     if (heightHeader.classList.contains("ani_BottomtoTop")) {
       heightHeader.classList.remove("ani_BottomtoTop");
     }
@@ -173,5 +179,31 @@ window.addEventListener("scroll", function (e) {
     } else {
       activeMenu[index].classList.remove("active");
     }
+  });
+});
+
+// Nav Navigation
+let navMenu = document.querySelectorAll(".header .nav ul li a");
+const mainNav = document.querySelector(".header nav");
+const closeBtn = document.querySelector(".header .header__btnmenu");
+sectionsNav = [];
+navMenu.forEach(function (element, index) {
+  let link = element.getAttribute("href");
+  let className = link.replace("#", "");
+  let sectionNav = document.querySelector("." + className);
+  sectionsNav.push(sectionNav);
+
+  element.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    mainNav.classList.remove("active");
+    closeBtn.classList.remove("active");
+
+    let positionofNav = sectionNav.offsetTop - 65;
+    console.log(positionofNav);
+    window.scrollTo({
+      top: positionofNav,
+      behavior: "smooth",
+    });
   });
 });
