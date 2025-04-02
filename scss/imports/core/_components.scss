@@ -121,11 +121,11 @@ article {
 
 .h3-title {
   @include text(40px, M Bold, normal, $blue-cl, null);
-  width: 330px;
   &.--fs25 {
     font-size: 25px;
   }
 }
+
 .h3-content {
   @include text(14px, M Reg, null, $blue-cl, null);
   font-weight: bold;

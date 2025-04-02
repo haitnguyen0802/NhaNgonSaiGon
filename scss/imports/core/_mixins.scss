@@ -29,6 +29,12 @@
 		@content;
 	}
 }
+// custom breakpoint for under 1500px
+@mixin xl {
+	@media screen and (max-width: $xl-max) {
+		@content;
+	}
+}
 // desktop landscape
 @mixin mdX {
 	@media screen and (max-width: $md-max) and (orientation: landscape) {

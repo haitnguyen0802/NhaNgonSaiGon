@@ -8,8 +8,10 @@ $xxs-min: 576px; // CÓ THỂ TÙY CHỈNH
 $xs-min: 768px; // KHÔNG THAY ĐỔI
 $sm-min: 992px; // KHÔNG THAY ĐỔI
 $md-min: 1200px; // KHÔNG THAY ĐỔI
+$xl-min: 1500px; // CÓ THỂ TÙY CHỈNH
 $lg-min: 1600px; // CÓ THỂ TÙY CHỈNH
 
+$xl-max: ($xl-min - 1); // Under 1500px
 $xxs-max: ($xxs-min - 1); // Small Mobile
 $xs-max: ($xs-min - 1); // Mobile
 $sm-max: ($sm-min - 1); // Tablet
@@ -63,11 +65,28 @@ $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
 
   --gap: 30px; // gap này sử dụng cho gap cột & padding của container, container-fluid
 
-  --height-header: 70px;
+  --height-header: 80px;
   --height-button: 56px;
   --ptop: 80px;
   --pbottom: 70px;
   --pd-section: 70px;
+
+  // For screens under 1500px
+  @media (max-width: $xl-max) {
+    --height-header: 70px;
+    --height-button: 50px;
+    --gap: 28px;
+    --pd-section: 65px;
+    
+    --h1-fs: 6.5rem;
+    --h1-lh: 7.2rem;
+    
+    --h2-fs: 4.8rem;
+    --h2-lh: 5.5rem;
+    
+    --h3-fs: 3rem;
+    --h3-lh: 4rem;
+  }
 
   @media (max-width: $sm-max) {
     // Tablet
