@@ -1,550 +1,714 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Luxstate</title>
-    <link rel="icon" href="favicon.ico" />
-    <meta name="title" content="" />
-    <meta name="description" content="" />
 
-    <!-- meta facebook -->
-    <meta property="og:locale" content="vi" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:image" content="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>NhaNgonSaiGon</title>
+  <link rel="icon" href="favicon.ico" />
+  <meta name="title" content="" />
+  <meta name="description" content="" />
 
-    <link rel="stylesheet" href="dest/style.min.css" />
-    <link rel="stylesheet" href="dest/fonts.css" />
-  </head>
+  <!-- meta facebook -->
+  <meta property="og:locale" content="vi" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:image" content="" />
 
-  <body class="homepage">
-    <!-- HEADER -->
-    <header class="header">
-      <div class="container">
-        <div class="header__logo">
+  <!-- <link rel="stylesheet" href="dest/style.min.css" /> -->
+  <link rel="stylesheet" href="./scss/style.css">
+  <link rel="stylesheet" href="dest/fonts.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</head>
+
+<body class="homepage">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__menu">
+        <div class="header__menu-logo">
           <a href="./"><img src="./img/logo.png" alt="" /></a>
         </div>
-        <div class="header__menu">
-          <ul>
-            <li class="active"><a href="#company">About</a></li>
-            <li><a href="#appartments">Apartments</a></li>
-            <li><a href="#hiw">How It Work</a></li>
-            <li><a href="#agents">Agents</a></li>
-            <li><a href="#awesome">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="header__cta">
-          <a href="#">Join Us</a>
-          <a href="#">Getting Started</a>
-        </div>
-        <div class="header__btnmenu"><span></span></div>
-        <nav class="nav">
-          <ul>
-            <li><a href="#company">About</a></li>
-            <li><a href="#appartments">Appartments</a></li>
-            <li><a href="#hiw">How It Work</a></li>
-            <li><a href="#agents">Agents</a></li>
-            <li><a href="#awesome">Contact Us</a></li>
-          </ul>
-        </nav>
+        <ul>
+          <li class="active"><a href="#company">Nhà đất bán</a></li>
+          <li><a href="#appartments">Nhà đất cho thuê</a></li>
+          <li><a href="#hiw">Dự án</a></li>
+          <li class="menu-item-hidden"><a href="#agents">Tin tức</a></li>
+          <li class="menu-item-hidden"><a href="#awesome">Wiki BĐS</a></li>
+          <li class="menu-item-hidden"><a href="#awesome">Phân tích đánh giá</a></li>
+          <li class="menu-item-hidden"><a href="#awesome">Liên hệ</a></li>
+          <li class="dots-menu-icon">
+            <a onclick="toggleDropdown(event)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                  d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="#agents">Tin tức</a></li>
+                <li><a href="#awesome">Wiki BĐS</a></li>
+                <li><a href="#awesome">Phân tích đánh giá</a></li>
+                <li><a href="#awesome">Liên hệ</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
-    </header>
 
-    <!-- MAIN -->
-    <main class="mainwrapper">
-      <section class="banner">
-        <div class="container">
-          <div class="banner__wrap">
-            <h1>Find Your New Modern Apartment</h1>
-            <div class="banner__wrap-btn">
-              <input type="text" placeholder="Search Locations" />
-              <a href="#">Search</a>
-            </div>
-            <div class="banner__wrap-info">
-              <a href="tel:0001234567"
-                ><img src="./img/phone.png" alt="" /> (000) 123-4567</a
-              >
-              <a href="#"
-                ><img src="./img/location.png" alt="" /> Melbourne, Australia</a
-              >
-            </div>
+      <div class="header__cta">
+        <a href="#">Tải ứng dụng</a>
+        <span class="header__cta-heart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
+            viewBox="0 0 16 16">
+            <path
+              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+          </svg>
+        </span>
+        <div class="header__cta-menu">
+          <a href="#">Đăng nhập</a>
+          <span class="line"></span>
+          <a href="#">Đăng ký</a>
+        </div>
+        <div class="header__cta-btn">
+          <a href="#">Đăng tin</a>
+        </div>
+      </div>
+      <div class="header__btnmenu"><span></span></div>
+      <nav class="nav">
+        <div class="nav__cta">
+          <div class="nav__cta-heart">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+              <path
+                d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181">
+              </path>
+            </svg>
           </div>
-          <div class="banner__btnscroll">
-            <span>Scroll Down</span>
-            <img src="./img/arrow.png" alt="" />
+          <div class="nav__cta-btn">
+            <a href="#">Đăng tin</a>
+          </div>
+          <div class="nav__cta-menu">
+            <a href="#">Đăng nhập</a>
+            <span class="line"></span>
+            <a href="#">Đăng ký</a>
           </div>
         </div>
-      </section>
-      <section class="company pd-section">
-        <div class="container">
-          <div class="company__content">
-            <h3 class="h3-title">Our’s Company Statistics</h3>
-            <p class="h3-content">
-              In this space market-facing, yet UI work flows , or bake it in.
-              Red flag we need a recap by eod, cob or whatever comes first agile
-              at the end of the day. Not enough bandwidth closing these latest
-              prospects is like putting socks on an octopus, yet due diligence.
-              <br />
-              <br />
-              We need to get all stakeholders up to speed and in the right place
-              hard stop, or technologically savvy or pre launch. Pro-sumer
-              software commitment to the cause offline this discussion and
-              wiggle room blue sky. Beef up teams were able to drive adoption
-              and awareness. Screw the pooch killing it.
-            </p>
-          </div>
-          <div class="company__items">
-            <div class="company__items-block">
-              <span>748</span>
-              <p>Appartments</p>
-            </div>
-            <div class="company__items-block">
-              <span>3854</span>
-              <p>Clients</p>
-            </div>
-            <div class="company__items-block">
-              <span>24</span>
-              <p>Employees</p>
-            </div>
-            <div class="company__items-block">
-              <span>14</span>
-              <p>Awards</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="appartments">
-        <div class="container pd-top">
-          <div class="appartments__content">
-            <h3 class="h3-title">More Then 500+ Appartments For Rent</h3>
-          </div>
-          <div class="appartments__items">
-            <div class="appartments__items-block">
-              <div class="img">
-                <img src="./img/img1.jpg" alt="" />
-              </div>
-              <div class="info">
-                <h4 class="h4-title">Random Street, Apt B453, New York</h4>
-                <div class="descript">
-                  <div class="price">$3,500$</div>
-                  <div class="wrap">
-                    <div class="wrap-one">
-                      <img src="./img/shower_ic.png" alt="" />
-                      <span>2 BA</span>
-                    </div>
-                    <div class="wrap-sec">
-                      <img src="./img/car_ic.png" alt="" />
-                      <span>2 BD</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="appartments__items-block">
-              <div class="img">
-                <img src="./img/img2.jpg" alt="" />
-              </div>
-              <div class="info">
-                <h4 class="h4-title">Random Street, Apt B453, New York</h4>
-                <div class="descript">
-                  <div class="price">$3,500$</div>
-                  <div class="wrap">
-                    <div class="wrap-one">
-                      <img src="./img/shower_ic.png" alt="" />
-                      <span>2 BA</span>
-                    </div>
-                    <div class="wrap-sec">
-                      <img src="./img/car_ic.png" alt="" />
-                      <span>2 BD</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="appartments__items-block">
-              <div class="img">
-                <img src="./img/img3.jpg" alt="" />
-              </div>
-              <div class="info">
-                <h4 class="h4-title">Random Street, Apt B453, New York</h4>
-                <div class="descript">
-                  <div class="price">$3,500$</div>
-                  <div class="wrap">
-                    <div class="wrap-one">
-                      <img src="./img/shower_ic.png" alt="" />
-                      <span>2 BA</span>
-                    </div>
-                    <div class="wrap-sec">
-                      <img src="./img/car_ic.png" alt="" />
-                      <span>2 BD</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="appartments__items-block">
-              <div class="img">
-                <img src="./img/img4.jpg" alt="" />
-              </div>
-              <div class="info">
-                <h4 class="h4-title">Random Street, Apt B453, New York</h4>
-                <div class="descript">
-                  <div class="price">$3,500$</div>
-                  <div class="wrap">
-                    <div class="wrap-one">
-                      <img src="./img/shower_ic.png" alt="" />
-                      <span>2 BA</span>
-                    </div>
-                    <div class="wrap-sec">
-                      <img src="./img/car_ic.png" alt="" />
-                      <span>2 BD</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="appartments__items-block">
-              <div class="img">
-                <img src="./img/img5.jpg" alt="" />
-              </div>
-              <div class="info">
-                <h4 class="h4-title">Random Street, Apt B453, New York</h4>
-                <div class="descript">
-                  <div class="price">$3,500$</div>
-                  <div class="wrap">
-                    <div class="wrap-one">
-                      <img src="./img/shower_ic.png" alt="" />
-                      <span>2 BA</span>
-                    </div>
-                    <div class="wrap-sec">
-                      <img src="./img/car_ic.png" alt="" />
-                      <span>2 BD</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="appartments__items-block">
-              <div class="img">
-                <img src="./img/img6.jpg" alt="" />
-              </div>
-              <div class="info">
-                <h4 class="h4-title">Random Street, Apt B453, New York</h4>
-                <div class="descript">
-                  <div class="price">$3,500$</div>
-                  <div class="wrap">
-                    <div class="wrap-one">
-                      <img src="./img/shower_ic.png" alt="" />
-                      <span>2 BA</span>
-                    </div>
-                    <div class="wrap-sec">
-                      <img src="./img/car_ic.png" alt="" />
-                      <span>2 BD</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="appartments__button">
-            <a href="#">View All Appartments</a>
-          </div>
-        </div>
-      </section>
-      <section class="hiw">
-        <div class="container pd-top">
-          <div class="hiw__content">
-            <h3 class="h3-title">How it works?</h3>
-            <p class="h3-content">
-              In this space market-facing, yet UI work flows , or bake it in.
-              Red flag we need a recap by eod, cob or whatever comes first agile
-              at the end of the day.
-            </p>
-          </div>
-          <div class="hiw__items">
-            <div class="hiw__items-block active">
-              <div class="title">
-                <span>01</span>
-                <p>01 Find Your Location</p>
-              </div>
-              <div class="content">
-                <p>
-                  In this space market-facing, yet UI work flows , or bake it
-                  in. Red flag we neef the day.
-                </p>
-                <a href="#">Find Location</a>
-              </div>
-            </div>
-            <div class="hiw__items-block">
-              <div class="title">
-                <span>02</span>
-                <p>02 Find Appartment</p>
-              </div>
-              <div class="content">
-                <p>
-                  In this space market-facing, yet UI work flows , or bake it
-                  in. Red flag we neef the day.
-                </p>
-                <a href="#">Find Appartment</a>
-              </div>
-            </div>
-            <div class="hiw__items-block">
-              <div class="title">
-                <span>03</span>
-                <p>03 Make Contact</p>
-              </div>
-              <div class="content">
-                <p>
-                  In this space market-facing, yet UI work flows , or bake it
-                  in. Red flag we neef the day.
-                </p>
-                <a href="#">Make Contact</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="services">
-        <div class="container">
-          <div class="services__title">
-            <h3 class="h3-title">Services</h3>
-            <p class="h3-content">
-              In this space market-facing, yet UI work flows , or bake it in.
-              Red flag we need a first agile at the end of the day.
-            </p>
-          </div>
-          <div class="services__content">
-            <div class="services__content-img">
-              <img src="./img/img_service.jpg" alt="#" />
-            </div>
-            <div class="services__content-descript">
-              <h4 class="h4-title --fs25">Renting</h4>
-              <p class="h4-content">
-                In this space market-facing, yet UI work flows , or bake it in.
-                Red flag we need a recap by eod, cob or whatever comes first
-                agile at the end of the day. Not enough bandwidth closing these
-                latest prospects is like putting socks on an octopus, yet due
-                diligence
-              </p>
-              <h4 class="h4-title --fs25">Selling</h4>
-              <p class="h4-content">
-                In this space market-facing, yet UI work flows , or bake it in.
-                Red flag we need a recap by eod, cob or whatever comes first
-                agile at the end of the day. Not enough bandwidth closing these
-                latest prospects is like putting socks on an octopus, yet due
-                diligence
-              </p>
-              <h4 class="h4-title --fs25">Building</h4>
-              <p class="h4-content">
-                In this space market-facing, yet UI work flows , or bake it in.
-                Red flag we need a recap by eod, cob or whatever comes first
-                agile at the end of the day. Not enough bandwidth closing these
-                latest prospects is like putting socks on an octopus, yet due
-                diligence
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="agents">
-        <div class="container pd-top">
-          <div class="agents__title">
-            <h3 class="h3-title">Meet Our Agents</h3>
-            <p class="h3-content">
-              In this space market-facing, yet UI work flows , or bake it in.
-              Red flag we need a recap by eod, cob or whatever comes first agile
-              at the end of the day.
-            </p>
-          </div>
-          <div class="agents__items">
-            <div class="agents__items-block">
-              <div class="img">
-                <img src="./img/img_meet1.jpg" alt="" />
-              </div>
-              <div class="descript">
-                <span>Agent</span>
-                <div class="descript-info">
-                  <span>Mr.Luke Skywalker</span>
-                  <div class="social">
-                    <img src="./img/fb_ic.png" alt="" />
-                    <img src="./img/twitter_ic.png" alt="" />
-                    <img src="./img/internet_ic.png" alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="agents__items-block">
-              <div class="img">
-                <img src="./img/img_meet2.jpg" alt="" />
-              </div>
-              <div class="descript">
-                <span>Agent</span>
-                <div class="descript-info">
-                  <span>Mr.Luke Skywalker</span>
-                  <div class="social">
-                    <img src="./img/fb_ic.png" alt="" />
-                    <img src="./img/twitter_ic.png" alt="" />
-                    <img src="./img/internet_ic.png" alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="agents__items-block">
-              <div class="img">
-                <img src="./img/img_meet3.jpg" alt="" />
-              </div>
-              <div class="descript">
-                <span>Agent</span>
-                <div class="descript-info">
-                  <span>Mr.Luke Skywalker</span>
-                  <div class="social">
-                    <img src="./img/fb_ic.png" alt="" />
-                    <img src="./img/twitter_ic.png" alt="" />
-                    <img src="./img/internet_ic.png" alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="awesome">
-        <div class="container pd-top">
-          <div class="awesome-wrap">
-            <div class="awesome__title">
-              <h3 class="h3-title --fs25">Super Awesome Add</h3>
-              <p class="h3-content --fs13">
-                In this space market-facing, yet UI work flows , or bake it in.
-                Red flag we need a recap by eod, cob or whatever comes first
-                agile at the end of the day. Not enough bandwidth closing these
-                latest prospects is like putting socks on an octopus, yet due
-                diligence
-              </p>
-            </div>
-            <div class="awesome__items">
-              <div class="awesome__items-img">
-                <img src="./img/img_super.jpg" alt="" />
-              </div>
-              <div class="awesome__items-button">
-                <a href="#">
-                  <img src="./img/location.png" alt="#" /> Melbourne,Australia
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="awesome-wrap">
-            <div class="awesome__title">
-              <h3 class="h3-title --fs25">Super Awesome Add</h3>
-              <p class="h3-content --fs13">
-                In this space market-facing, yet UI work flows , or bake it in.
-                Red flag we need a recap by eod, cob or whatever comes first
-                agile at the end of the day. Not enough bandwidth closing these
-                latest prospects is like putting socks on an octopus, yet due
-                diligence
-              </p>
-            </div>
-            <div class="awesome__items">
-              <div class="awesome__items-img">
-                <img src="./img/img_super2.jpg" alt="" />
-              </div>
-              <div class="awesome__items-button">
-                <a href="#">
-                  <img src="./img/location.png" alt="#" /> Melbourne,Australia
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="awesome-wrap">
-            <div class="awesome__title">
-              <h3 class="h3-title --fs25">Super Awesome Add</h3>
-              <p class="h3-content --fs13">
-                In this space market-facing, yet UI work flows , or bake it in.
-                Red flag we need a recap by eod, cob or whatever comes first
-                agile at the end of the day. Not enough bandwidth closing these
-                latest prospects is like putting socks on an octopus, yet due
-                diligence
-              </p>
-              <div class="awesome__title-button">
-                <a href="#">Show Me More</a>
-              </div>
-            </div>
-            <div class="awesome__items">
-              <div class="awesome__items-img">
-                <img src="./img/img_super3.jpg" alt="" />
-              </div>
-              <div class="awesome__items-button">
-                <a href="#">
-                  <img src="./img/location.png" alt="#" /> Melbourne,Australia
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+        <ul>
+          <li><a href="#company">Nhà đất bán</a></li>
+          <li><a href="#appartments">Nhà đất cho thuê</a></li>
+          <li><a href="#hiw">Dự án</a></li>
+          <li><a href="#agents">Tin tức</a></li>
+          <li><a href="#awesome">Wiki BĐS</a></li>
+          <li><a href="#awesome">Phân tích đánh giá</a></li>
+          <li><a href="#awesome">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+  <!-- MAIN -->
+  <main class="mainwrapper">
+
+    <section class="banner">
+      <div class="banner-carousel">
+        <div class="carousel-cell">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop" alt="Real estate image 1">
+        </div>
+        <div class="carousel-cell">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop" alt="Real estate image 2">
+        </div>
+        <div class="carousel-cell">
+          <img src="https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=2574&auto=format&fit=crop" alt="Real estate image 3">
+        </div>
+      </div>
+      <div class="container">
+        <div class="banner__wrap">
+          <h1>Tìm Căn Hộ Hiện Đại Của Bạn</h1>
+          <div class="banner__wrap-btn">
+            <input type="text" placeholder="Tìm kiếm địa điểm" />
+            <a href="#">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Custom manual dots -->
+        <div class="custom-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+        </div>
+
+        <div class="banner__wrap-info">
+          <a href="tel:0001234567"><img src="./img/phone.png" alt="" /> (000) 123-4567</a>
+          <a href="#"><img src="./img/location.png" alt="" /> TP.Hồ Chí Minh, Việt Nam</a>
+        </div>
+        <div class="banner__btnscroll">
+          <span>Cuộn xuống</span>
+          <img src="./img/arrow.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Custom navigation buttons -->
+      <button class="banner-nav banner-nav--prev">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="#1a3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <button class="banner-nav banner-nav--next">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M9 6L15 12L9 18" stroke="#1a3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </section>
+
+    <!-- <section class="company pd-section">
+      <div class="container">
+        <div class="company__content">
+          <h3 class="h3-title">Thống Kê Công Ty Chúng Tôi</h3>
+          <p class="h3-content">
+            Trong không gian thị trường này, chúng tôi luôn nỗ lực mang đến những dịch vụ tốt nhất.
+            Chúng tôi cam kết đem đến trải nghiệm tuyệt vời cho khách hàng.
+            <br />
+            <br />
+            Chúng tôi luôn cập nhật và đổi mới để mang đến những giải pháp tốt nhất.
+            Với đội ngũ chuyên nghiệp và tận tâm, chúng tôi tự hào phục vụ khách hàng.
+          </p>
+        </div>
+        <div class="company__items">
+          <div class="company__items-block">
+            <span>748</span>
+            <p>Căn Hộ</p>
+          </div>
+          <div class="company__items-block">
+            <span>3854</span>
+            <p>Khách Hàng</p>
+          </div>
+          <div class="company__items-block">
+            <span>24</span>
+            <p>Nhân Viên</p>
+          </div>
+          <div class="company__items-block">
+            <span>14</span>
+            <p>Giải Thưởng</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="appartments">
       <div class="container pd-top">
-        <div class="footer__header">
-          <h2>
-            luxestate <br />
-            Explore Real Estate
-          </h2>
-          <div class="direct">
-            <input type="text" placeholder="Subscribe To Our Newsletter" />
-            <img src="./img/arrow_right.png" alt="" />
+        <div class="appartments__content">
+          <h3 class="h3-title">Sản phẩm bán chạy</h3>
+          <div class="appartments__filter">
+            <select id="productFilter">
+              <option value="latest">Mới nhất</option>
+              <option value="hot">Hot</option>
+              <option value="price_low">Giá thấp đến cao</option>
+              <option value="price_high">Giá cao đến thấp</option>
+            </select>
           </div>
         </div>
-        <div class="footer__body">
-          <div class="footer__body-items">
-            <a href="#"><img src="./img/logo_footer.png" alt="" /></a>
-            <span>© 2019 - luxestate, All Right Reserved</span>
+        <div class="appartments__items">
+
+          <div class="appartments__items-block">
+            <div class="label new">Mới</div>
+            <div class="img">
+              <img src="./img/img1.jpg" alt="" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">Random Street, Apt B453, New York</h4>
+              <div class="descript">
+                <div class="price">$3,500$</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>2 BA</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>2 BD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="footer__body-items">
-            <h5>LUXESTATE</h5>
-            <ul>
-              <li><a href="#">Agents</a></li>
-              <li><a href="#">Hunters</a></li>
-            </ul>
+
+          <div class="appartments__items-block">
+            <div class="label discount">-400TR</div>
+            <div class="img">
+              <img src="./img/img2.jpg" alt="" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">Random Street, Apt B453, New York</h4>
+              <div class="descript">
+                <div class="price">$3,500$</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>2 BA</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>2 BD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="footer__body-items">
-            <h5>COMPANY</h5>
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Social</a></li>
-            </ul>
+          <div class="appartments__items-block">
+            <div class="label new">Mới</div>
+            <div class="img">
+              <img src="./img/img3.jpg" alt="" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">Random Street, Apt B453, New York</h4>
+              <div class="descript">
+                <div class="price">$3,500$</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>2 BA</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>2 BD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="footer__body-items">
-            <h5>PRODUCT</h5>
-            <ul>
-              <li><a href="#">Appartments</a></li>
-              <li><a href="#">How It Works</a></li>
-            </ul>
+          <div class="appartments__items-block">
+            <div class="label discount">-200TR</div>
+            <div class="img">
+              <img src="./img/img4.jpg" alt="" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">Random Street, Apt B453, New York</h4>
+              <div class="descript">
+                <div class="price">$3,500$</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>2 BA</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>2 BD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="footer__body-items">
-            <h5>SERVICES</h5>
-            <ul>
-              <li><a href="#">Renting</a></li>
-              <li><a href="#">Selling</a></li>
-              <li><a href="#">Building</a></li>
-            </ul>
+          <div class="appartments__items-block">
+            <div class="label discount">-200TR</div>
+            <div class="img">
+              <img src="./img/img5.jpg" alt="" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">Random Street, Apt B453, New York</h4>
+              <div class="descript">
+                <div class="price">$3,500$</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>2 BA</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>2 BD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="appartments__items-block">
+            <div class="label discount">-200TR</div>
+            <div class="img">
+              <img src="./img/img6.jpg" alt="" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">Random Street, Apt B453, New York</h4>
+              <div class="descript">
+                <div class="price">$3,500$</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>2 BA</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>2 BD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="appartments__items-block">
+            <div class="label discount">-200TR</div>
+            <div class="img">
+              <img src="./img/img4.jpg" alt="" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">Random Street, Apt B453, New York</h4>
+              <div class="descript">
+                <div class="price">$3,500$</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>2 BA</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>2 BD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="appartments__items-block">
+            <div class="img">
+              <img src="./img/img5.jpg" alt="" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">Random Street, Apt B453, New York</h4>
+              <div class="descript">
+                <div class="price">$3,500$</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>2 BA</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>2 BD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="appartments__items-block">
+            <div class="img">
+              <img src="./img/img6.jpg" alt="" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">Random Street, Apt B453, New York</h4>
+              <div class="descript">
+                <div class="price">$3,500$</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>2 BA</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>2 BD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="appartments__pagination">
+          <button class="pagination-btn active">1</button>
+          <button class="pagination-btn">2</button>
+          <button class="pagination-btn">3</button>
+          <button class="pagination-btn next">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M9 6L15 12L9 18" stroke="#1a3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="hiw">
+      <div class="container pd-top">
+        <div class="hiw__content">
+          <h3 class="h3-title">Sản Phẩm Nổi Bật</h3>
+        </div>
+        <div class="hiw__items">
+
+          <div class="hiw__items-block active">
+            <div class="featured-img">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                alt="Biệt thự Vinhomes" />
+              <div class="featured-label">Nổi bật</div>
+            </div>
+            <div class="title">
+              <span>01</span>
+              <p>Biệt thự Vinhomes</p>
+            </div>
+            <div class="content">
+              <p>
+                Biệt thự cao cấp tại khu đô thị Vinhomes, thiết kế hiện đại với đầy đủ tiện nghi và an ninh 24/7.
+              </p>
+              <a href="#">Xem chi tiết</a>
+            </div>
+          </div>
+
+          <div class="hiw__items-block">
+            <div class="featured-img">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                alt="Biệt thự Vinhomes" />
+
+              <div class="featured-label">Nổi bật</div>
+            </div>
+            <div class="title">
+              <span>02</span>
+              <p>Căn hộ The Vista</p>
+            </div>
+            <div class="content">
+              <p>
+                Căn hộ sang trọng với tầm nhìn toàn cảnh thành phố, nội thất cao cấp và nhiều tiện ích.
+              </p>
+              <a href="#">Xem chi tiết</a>
+            </div>
+          </div>
+
+          <div class="hiw__items-block">
+            <div class="featured-img">
+              <img
+                src="https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+                alt="Nhà phố Palm City" />
+              <div class="featured-label">Nổi bật</div>
+            </div>
+            <div class="title">
+              <span>03</span>
+              <p>Nhà phố Palm City</p>
+            </div>
+            <div class="content">
+              <p>
+                Nhà phố liền kề trong khu compound khép kín, thiết kế thông minh với không gian xanh rộng rãi.
+              </p>
+              <a href="#">Xem chi tiết</a>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-    <script type="text/javascript" src="./js/libs/_jquery.js"></script>
-    <script type="text/javascript" src="dest/jsmain.min.js"></script>
-    <script type="text/javascript" src="dest/main.js"></script>
-  </body>
+    </section>
+
+
+    <section class="services">
+      <div class="container">
+        <div class="services__title">
+          <h3 class="h3-title">Dịch Vụ</h3>
+          <p class="h3-content">
+            Chúng tôi cung cấp đa dạng các dịch vụ bất động sản.
+            Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ bạn.
+          </p>
+        </div>
+        <div class="services__content">
+          <div class="services__content-img">
+            <img src="./img/img_service.jpg" alt="#" />
+          </div>
+          <div class="services__content-descript">
+            <h4 class="h4-title --fs25">Cho Thuê</h4>
+            <p class="h4-content">
+              Dịch vụ cho thuê bất động sản với quy trình đơn giản, nhanh chóng.
+              Chúng tôi cam kết mang đến những căn hộ chất lượng với giá cả hợp lý.
+            </p>
+            <h4 class="h4-title --fs25">Bán</h4>
+            <p class="h4-content">
+              Dịch vụ mua bán bất động sản uy tín, chuyên nghiệp.
+              Chúng tôi hỗ trợ tư vấn và hoàn thiện thủ tục nhanh chóng.
+            </p>
+            <h4 class="h4-title --fs25">Xây Dựng</h4>
+            <p class="h4-content">
+              Dịch vụ xây dựng và thiết kế bất động sản theo yêu cầu.
+              Đội ngũ kiến trúc sư giàu kinh nghiệm sẽ mang đến giải pháp tối ưu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="agents">
+      <div class="container pd-top">
+        <div class="agents__title">
+          <h3 class="h3-title">Gặp Gỡ Đội Ngũ Của Chúng Tôi</h3>
+          <p class="h3-content">
+            Đội ngũ chuyên gia giàu kinh nghiệm luôn sẵn sàng hỗ trợ bạn.
+            Chúng tôi cam kết mang đến dịch vụ tốt nhất.
+          </p>
+        </div>
+        <div class="agents__items">
+          <div class="agents__items-block">
+            <div class="img">
+              <img src="./img/img_meet1.jpg" alt="" />
+            </div>
+            <div class="descript">
+              <span>Chuyên Viên</span>
+              <div class="descript-info">
+                <span>Nguyễn Văn A</span>
+                <div class="social">
+                  <img src="./img/fb_ic.png" alt="" />
+                  <img src="./img/twitter_ic.png" alt="" />
+                  <img src="./img/internet_ic.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="agents__items-block">
+            <div class="img">
+              <img src="./img/img_meet2.jpg" alt="" />
+            </div>
+            <div class="descript">
+              <span>Chuyên Viên</span>
+              <div class="descript-info">
+                <span>Trần Thị B</span>
+                <div class="social">
+                  <img src="./img/fb_ic.png" alt="" />
+                  <img src="./img/twitter_ic.png" alt="" />
+                  <img src="./img/internet_ic.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="agents__items-block">
+            <div class="img">
+              <img src="./img/img_meet3.jpg" alt="" />
+            </div>
+            <div class="descript">
+              <span>Chuyên Viên</span>
+              <div class="descript-info">
+                <span>Lê Văn C</span>
+                <div class="social">
+                  <img src="./img/fb_ic.png" alt="" />
+                  <img src="./img/twitter_ic.png" alt="" />
+                  <img src="./img/internet_ic.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="awesome">
+      <div class="container pd-top">
+        <div class="awesome-wrap">
+          <div class="awesome__title">
+            <h3 class="h3-title --fs25">Tin Tức Nổi Bật</h3>
+            <p class="h3-content --fs13">
+              Cập nhật những tin tức mới nhất về thị trường bất động sản.
+              Những phân tích chuyên sâu từ các chuyên gia hàng đầu.
+            </p>
+          </div>
+          <div class="awesome__items">
+            <div class="awesome__items-img">
+              <img src="./img/img_super.jpg" alt="" />
+            </div>
+            <div class="awesome__items-button">
+              <a href="#">
+                <img src="./img/location.png" alt="#" /> TP.Hồ Chí Minh
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="awesome-wrap">
+          <div class="awesome__title">
+            <h3 class="h3-title --fs25">Dự Án Mới</h3>
+            <p class="h3-content --fs13">
+              Khám phá những dự án bất động sản mới nhất.
+              Cơ hội đầu tư với tiềm năng sinh lời cao.
+            </p>
+          </div>
+          <div class="awesome__items">
+            <div class="awesome__items-img">
+              <img src="./img/img_super2.jpg" alt="" />
+            </div>
+            <div class="awesome__items-button">
+              <a href="#">
+                <img src="./img/location.png" alt="#" /> TP.Hồ Chí Minh
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="awesome-wrap">
+          <div class="awesome__title">
+            <h3 class="h3-title --fs25">Bất Động Sản Cao Cấp</h3>
+            <p class="h3-content --fs13">
+              Khám phá những căn hộ cao cấp với thiết kế độc đáo.
+              Trải nghiệm cuộc sống đẳng cấp 5 sao.
+            </p>
+            <div class="awesome__title-button">
+              <a href="#">Xem Thêm</a>
+            </div>
+          </div>
+          <div class="awesome__items">
+            <div class="awesome__items-img">
+              <img src="./img/img_super3.jpg" alt="" />
+            </div>
+            <div class="awesome__items-button">
+              <a href="#">
+                <img src="./img/location.png" alt="#" /> TP.Hồ Chí Minh
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container pd-top">
+      <div class="footer__header">
+        <h2>
+          NhaNgonSaiGon <br />
+          Khám Phá Bất Động Sản
+        </h2>
+        <div class="direct">
+          <input type="text" placeholder="Đăng Ký Nhận Tin" />
+          <img src="./img/arrow_right.png" alt="" />
+        </div>
+      </div>
+      <div class="footer__body">
+        <div class="footer__body-items">
+          <a href="#"><img src="./img/logo_footer.png" alt="" /></a>
+          <span>© 2024 - NhaNgonSaiGon, Bản Quyền Thuộc Về Chúng Tôi</span>
+        </div>
+        <div class="footer__body-items">
+          <h5>NhaNgonSaiGon</h5>
+          <ul>
+            <li><a href="#">Chuyên Viên</a></li>
+            <li><a href="#">Khách Hàng</a></li>
+          </ul>
+        </div>
+        <div class="footer__body-items">
+          <h5>CÔNG TY</h5>
+          <ul>
+            <li><a href="#">Về Chúng Tôi</a></li>
+            <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+            <li><a href="#">Mạng Xã Hội</a></li>
+          </ul>
+        </div>
+        <div class="footer__body-items">
+          <h5>SẢN PHẨM</h5>
+          <ul>
+            <li><a href="#">Căn Hộ</a></li>
+            <li><a href="#">Cách Hoạt Động</a></li>
+          </ul>
+        </div>
+        <div class="footer__body-items">
+          <h5>DỊCH VỤ</h5>
+          <ul>
+            <li><a href="#">Cho Thuê</a></li>
+            <li><a href="#">Bán</a></li>
+            <li><a href="#">Xây Dựng</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="./js/libs/_jquery.js"></script>
+  <script type="text/javascript" src="dest/jsmain.min.js"></script>
+  <script type="text/javascript" src="dest/main.js"></script>
+</body>
+
 </html>
