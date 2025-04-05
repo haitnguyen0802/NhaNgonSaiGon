@@ -4,34 +4,56 @@ window.addEventListener("scroll", function () {
 });
 
 // Height Header
-let heightHeader = document.querySelector(".header");
+let lastScrollPosition = 0;
+const header = document.querySelector(".header");
 const mainWrapper = document.querySelector(".mainwrapper");
-window.addEventListener("scroll", function (event) {
-  if (this.window.pageYOffset >= 200) {
-    mainWrapper.classList.add("active");
-    heightHeader.classList.add("active");
-  } else {
-    mainWrapper.classList.remove("active");
-    heightHeader.classList.remove("active", "ani_BottomtoTop");
-  }
-  if (this.window.innerWidth <= 414) {
-    if (this.window.pageYOffset >= 400) {
-      heightHeader.classList.add("active", "ani_ToptoBottom");
+
+window.addEventListener("scroll", function() {
+    const currentScrollPosition = window.pageYOffset;
+    const isMobile = window.innerWidth <= 414;
+    const showThreshold = 200; // Apply 'active' style past this point
+    const hideThreshold = isMobile ? 400 : 600; // Trigger hide/show animations past this point
+
+    // Determine scroll direction
+    const scrollingDown = currentScrollPosition > lastScrollPosition;
+
+    // --- Manage `mainWrapper` active state --- (Optional based on your needs)
+    if (currentScrollPosition >= showThreshold) {
+        mainWrapper.classList.add("active");
     } else {
-      heightHeader.classList.replace("ani_ToptoBottom", "ani_BottomtoTop");
+        mainWrapper.classList.remove("active");
     }
-  } else if (this.window.innerWidth > 414) {
-    if (this.window.pageYOffset >= 600) {
-      heightHeader.classList.add("active", "ani_ToptoBottom");
+
+    // --- Manage `header` state --- 
+    if (currentScrollPosition < showThreshold) {
+        // Near the top: Reset header to default state
+        header.classList.remove("active", "ani_ToptoBottom", "ani_BottomtoTop");
     } else {
-      heightHeader.classList.replace("ani_ToptoBottom", "ani_BottomtoTop");
+        // Past the initial threshold: Header is active
+        header.classList.add("active");
+
+        if (scrollingDown) {
+            // Scrolling DOWN
+            if (currentScrollPosition >= hideThreshold) {
+                // Hide header smoothly
+                header.classList.remove("ani_ToptoBottom");
+                header.classList.add("ani_BottomtoTop");
+            }
+            // Optional: If between showThreshold and hideThreshold while scrolling down,
+            // ensure it's visible (ani_ToptoBottom or no animation class)
+            // else {
+            //     header.classList.remove("ani_BottomtoTop"); 
+            // }
+
+        } else {
+            // Scrolling UP: Show header smoothly
+            header.classList.remove("ani_BottomtoTop");
+            header.classList.add("ani_ToptoBottom");
+        }
     }
-  }
-  if (this.window.pageYOffset > 200 && this.window.pageYOffset < 500) {
-    if (heightHeader.classList.contains("ani_BottomtoTop")) {
-      heightHeader.classList.remove("ani_BottomtoTop");
-    }
-  }
+
+    // Update last scroll position for the next event
+    lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition;
 });
 
 // Banner 

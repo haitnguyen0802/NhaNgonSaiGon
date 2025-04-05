@@ -3,11 +3,11 @@
 .header {
   background-color: $white-cl;
   width: 100%;
-  height: var(--height-header);
+  // height: var(--height-header);
   // transform: translate(0, -70px);
   transition: 0.4s transform;
   z-index: 111;
-
+  position: fixed;
   // &.activeHeader {
   //   transform: translate(0, 0);
   //   transition: 0.4s transform;
