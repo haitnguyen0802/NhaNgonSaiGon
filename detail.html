@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Chi tiết bất động sản - NhaNgonSaiGon</title>
+  <link rel="icon" href="favicon.ico" />
+  <meta name="title" content="Chi tiết bất động sản - NhaNgonSaiGon" />
+  <meta name="description" content="Căn hộ Saigon Pearl, tầng cao view sông tại Quận Bình Thạnh, TP.HCM" />
+
+  <!-- meta facebook -->
+  <meta property="og:locale" content="vi" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Chi tiết bất động sản - NhaNgonSaiGon" />
+  <meta property="og:description" content="Căn hộ Saigon Pearl, tầng cao view sông tại Quận Bình Thạnh, TP.HCM" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="NhaNgonSaiGon" />
+  <meta property="og:image" content="./img/img_super.jpg" />
+
+  <link rel="stylesheet" href="dest/style.min.css" />
+  <!-- <link rel="stylesheet" href="./scss/style.css"> -->
+  <link rel="stylesheet" href="dest/fonts.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</head>
+
+<body class="detailpage">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__menu">
+        <div class="header__menu-logo">
+          <a href="./"><img src="./img/logo.png" alt="" /></a>
+        </div>
+        <ul>
+          <li class="active"><a href="#company">Nhà đất bán</a></li>
+          <li><a href="#appartments">Nhà đất cho thuê</a></li>
+          <li><a href="#hiw">Dự án</a></li>
+          <li class="menu-item-hidden"><a href="#agents">Tin tức</a></li>
+          <li class="menu-item-hidden"><a href="#awesome">Wiki BĐS</a></li>
+          <li class="menu-item-hidden"><a href="#awesome">Phân tích đánh giá</a></li>
+          <li class="menu-item-hidden"><a href="#awesome">Liên hệ</a></li>
+          <li class="dots-menu-icon">
+            <a onclick="toggleDropdown(event)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                  d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="#agents">Tin tức</a></li>
+                <li><a href="#awesome">Wiki BĐS</a></li>
+                <li><a href="#awesome">Phân tích đánh giá</a></li>
+                <li><a href="#awesome">Liên hệ</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="header__cta">
+        <a href="#">Tải ứng dụng</a>
+        <span class="header__cta-heart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
+            viewBox="0 0 16 16">
+            <path
+              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+          </svg>
+        </span>
+        <div class="header__cta-menu">
+          <a href="#">Đăng nhập</a>
+          <span class="line"></span>
+          <a href="#">Đăng ký</a>
+        </div>
+        <div class="header__cta-btn">
+          <a href="#">Đăng tin</a>
+        </div>
+      </div>
+      <div class="header__btnmenu"><span></span></div>
+      <nav class="nav">
+        <div class="nav__cta">
+          <div class="nav__cta-heart">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+              <path
+                d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181">
+              </path>
+            </svg>
+          </div>
+          <div class="nav__cta-btn">
+            <a href="#">Đăng tin</a>
+          </div>
+          <div class="nav__cta-menu">
+            <a href="#">Đăng nhập</a>
+            <span class="line"></span>
+            <a href="#">Đăng ký</a>
+          </div>
+        </div>
+        <ul>
+          <li><a href="#company">Nhà đất bán</a></li>
+          <li><a href="#appartments">Nhà đất cho thuê</a></li>
+          <li><a href="#hiw">Dự án</a></li>
+          <li><a href="#agents">Tin tức</a></li>
+          <li><a href="#awesome">Wiki BĐS</a></li>
+          <li><a href="#awesome">Phân tích đánh giá</a></li>
+          <li><a href="#awesome">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="mainwrapper">
+    <section class="propertydetail">
+      <div class="container">
+        <!-- Property Header -->
+        <div class="propertydetail__header">
+          <h1 class="propertydetail__title">
+            Chính chủ bán nhà riêng Nguyễn Chí Thanh 62m, Lô góc, 7T thang máy, 11 phòng, cho thuê 80 triệu/th.
+          </h1>
+          <p class="propertydetail__address">
+            <img src="./img/location.png" alt="" class="icon-location">
+            Đường Nguyễn Chí Thanh, Phường Láng Thượng, Đống Đa, Hà Nội
+          </p>
+        </div>
+
+        <!-- Property Content -->
+        <div class="propertydetail__content">
+          <!-- Left Column -->
+          <div class="propertydetail__content-left">
+            <!-- Property Price and Info Summary -->
+            <div class="propertydetail__summary">
+              <div class="property-price">
+                <div class="current-price">
+                  <span class="label">Giá bán</span>
+                  <span class="value">15.5 tỷ</span>
+                </div>
+                <div class="old-price">
+                  <span class="label">Giá cũ</span>
+                  <span class="value">15.8 tỷ</span>
+                </div>
+              </div>
+              <div class="property-area">
+                <span class="label">Diện tích</span>
+                <span class="value">62 m²</span>
+              </div>
+              <div class="property-rooms">
+                <span class="label">Phòng ngủ</span>
+                <span class="value">11 PN</span>
+              </div>
+            </div>
+
+            <!-- Property Gallery -->
+            <div class="propertydetail__gallery">
+              <div class="propertydetail__gallery-carousel">
+                <div class="carousel-cell">
+                  <img src="./img/img_super.jpg" alt="Property Image">
+                  <div class="image-count">1/4</div>
+                </div>
+                <div class="carousel-cell">
+                  <img src="./img/img_super2.jpg" alt="Property Image">
+                  <div class="image-count">2/4</div>
+                </div>
+                <div class="carousel-cell">
+                  <img src="./img/img_super3.jpg" alt="Property Image">
+                  <div class="image-count">3/4</div>
+                </div>
+                <div class="carousel-cell">
+                  <img src="./img/img1.jpg" alt="Property Image">
+                  <div class="image-count">4/4</div>
+                </div>
+              </div>
+              <div class="propertydetail__gallery-thumbnails">
+                <div class="thumbnail-item">
+                  <img src="./img/img_super.jpg" alt="Thumbnail 1">
+                </div>
+                <div class="thumbnail-item">
+                  <img src="./img/img_super2.jpg" alt="Thumbnail 2">
+                </div>
+                <div class="thumbnail-item">
+                  <img src="./img/img_super3.jpg" alt="Thumbnail 3">
+                </div>
+                <div class="thumbnail-item">
+                  <img src="./img/img1.jpg" alt="Thumbnail 4">
+                </div>
+              </div>
+            </div>
+
+            <!-- Property Information -->
+            <div class="propertydetail__info">
+              <h2 class="info-title">Thông tin mô tả</h2>
+              <div class="info-content">
+                <p>Nhà đẹp Nguyễn Chí Thanh: 7 tầng thang máy - 11 phòng - lô góc - ngõ thông ô tô - cạnh khu trật tự-an ninh - 20m ra ô tô tránh - cho thuê 80tr/th</p>
+                <p>- Chủ đi du học thỉnh thoảng mới về nên cần bán nhà mặt ngõ Phường Láng, Ngọc Khánh, Giảng Võ, Kim Mã, HCM, Hà Nội VN… An ninh tốt, đông dân. dễ thuê, hợp kinh doanh.</p>
+                <p>Thiết kế:</p>
+                <p>T1: Cửa hàng bán chuyển + WC + sảnh nhỏ xíu.<br>
+                T2 & 3: Đang kê phòng khách, bàn ăn, bàn bếp.<br>
+                T4-7: Mỗi tầng 3 phòng 2 ngủ, full nội thất.<br>
+                Các tầng đề được tận dụng hợp lý làm giường.</p>
+                <p>Sổ đã chính chủ GĐ mình.<br>
+                Giá bán 15.8 tỷ</p>
+              </div>
+            </div>
+
+            <!-- Property Details -->
+            <div class="propertydetail__features">
+              <h2 class="features-title">Đặc điểm bất động sản</h2>
+              <div class="features-grid">
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                  </div>
+                  <div class="feature-content">
+                    <span class="feature-label">Mức giá</span>
+                    <span class="feature-value">14.5 tỷ</span>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <path d="M3 9h18"></path>
+                      <path d="M9 21V9"></path>
+                    </svg>
+                  </div>
+                  <div class="feature-content">
+                    <span class="feature-label">Diện tích</span>
+                    <span class="feature-value">62 m²</span>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 7v11m0-7h18m0-4v11m-5-7v-2a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+                      <rect x="3" y="11" width="18" height="7" rx="2"></rect>
+                    </svg>
+                  </div>
+                  <div class="feature-content">
+                    <span class="feature-label">Số phòng ngủ</span>
+                    <span class="feature-value">11 phòng</span>
+                  </div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="18" rx="2" ry="2"></rect>
+                      <line x1="2" y1="8" x2="22" y2="8"></line>
+                      <line x1="2" y1="13" x2="22" y2="13"></line>
+                      <line x1="2" y1="18" x2="22" y2="18"></line>
+                    </svg>
+                  </div>
+                  <div class="feature-content">
+                    <span class="feature-label">Số tầng</span>
+                    <span class="feature-value">7 tầng</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="propertydetail__content-right">
+            <!-- Property ID and Time -->
+            <div class="propertydetail__meta">
+              <div class="property-id">
+                <span class="label">Mã tin:</span>
+                <span class="value">2022292190</span>
+              </div>
+              <div class="property-time">
+                <span class="label">Cập nhật:</span>
+                <span class="value">19-03-2023</span>
+              </div>
+            </div>
+
+            <!-- Discount Label -->
+            <div class="discount-label">-300tr</div>
+
+            <!-- Similar Properties -->
+            <div class="similar-properties">
+              <div class="similar-property">
+                <div class="similar-property-image">
+                  <img src="./img/img3.jpg" alt="Similar Property">
+                  <div class="similar-price">12.5 tỷ</div>
+                  <div class="similar-discount">-300tr</div>
+                </div>
+                <div class="similar-property-info">
+                  <h3 class="similar-title">Bán nhà mặt phố Nguyễn Công Hoan, 124 tỷ, 45 m...</h3>
+                  <div class="similar-meta">
+                    <span class="similar-area">85 m²</span>
+                    <div class="similar-location">
+                      <img src="./img/location.png" alt="" class="icon-location">
+                      <span>Phú Nhuận, Hồ Chí Minh</span>
+                    </div>
+                  </div>
+                  <div class="similar-date">Đăng 15/07/2023</div>
+                </div>
+                <div class="similar-wishlist">
+                  <button class="btn-wishlist">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              
+              <div class="similar-property">
+                <div class="similar-property-image">
+                  <img src="./img/img4.jpg" alt="Similar Property">
+                  <div class="similar-price">10.3 tỷ</div>
+                </div>
+                <div class="similar-property-info">
+                  <h3 class="similar-title">Bán nhà mặt tiền 4 tầng, Nguyễn Công Hoan...</h3>
+                  <div class="similar-meta">
+                    <span class="similar-area">60 m²</span>
+                    <div class="similar-location">
+                      <img src="./img/location.png" alt="" class="icon-location">
+                      <span>Phú Nhuận, Hồ Chí Minh</span>
+                    </div>
+                  </div>
+                  <div class="similar-date">Đăng 24/08/2023</div>
+                </div>
+                <div class="similar-wishlist">
+                  <button class="btn-wishlist">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              
+              <div class="similar-property">
+                <div class="similar-property-image">
+                  <img src="./img/img5.jpg" alt="Similar Property">
+                  <div class="similar-price">19.5 tỷ</div>
+                  <div class="similar-discount">-250tr</div>
+                </div>
+                <div class="similar-property-info">
+                  <h3 class="similar-title">Cho thuê Phòng trọ Ngọc Lâm...</h3>
+                  <div class="similar-meta">
+                    <span class="similar-area">3.5 m²</span>
+                    <div class="similar-location">
+                      <img src="./img/location.png" alt="" class="icon-location">
+                      <span>Bắc Từ Liêm, Hà Nội</span>
+                    </div>
+                  </div>
+                  <div class="similar-date">Đăng 7 ngày trước</div>
+                </div>
+                <div class="similar-wishlist">
+                  <button class="btn-wishlist">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Related Properties Section -->
+            <div class="related-properties">
+              <h3 class="related-title">Bất động sản dành cho bạn</h3>
+              <div class="related-list">
+                <div class="related-item">
+                  <div class="related-image">
+                    <img src="./img/img1.jpg" alt="Related Property">
+                  </div>
+                  <div class="related-info">
+                    <h4>Bán nhà Hoàng Cầu Thang máy đón đần sáng...</h4>
+                    <div class="related-meta">
+                      <div class="related-price">25.8 tỷ</div>
+                      <div class="related-area">80 m²</div>
+                    </div>
+                    <div class="related-location">
+                      <img src="./img/location.png" alt="" class="icon-location">
+                      <span>Đống Đa, Hà Nội</span>
+                    </div>
+                  </div>
+                  <div class="related-wishlist">
+                    <button class="btn-wishlist">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="related-item">
+                  <div class="related-image">
+                    <img src="./img/img2.jpg" alt="Related Property">
+                  </div>
+                  <div class="related-info">
+                    <h4>Nhà đẹp Nguyễn Chí Thanh, đống Đa, phố là lô, kinh...</h4>
+                    <div class="related-meta">
+                      <div class="related-price">12.5 tỷ</div>
+                      <div class="related-area">42 m²</div>
+                    </div>
+                    <div class="related-location">
+                      <img src="./img/location.png" alt="" class="icon-location">
+                      <span>Đống Đa, Hà Nội</span>
+                    </div>
+                  </div>
+                  <div class="related-wishlist">
+                    <button class="btn-wishlist">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="related-item">
+                  <div class="related-image">
+                    <img src="./img/img3.jpg" alt="Related Property">
+                  </div>
+                  <div class="related-info">
+                    <h4>Chủ cần Nguyễn Chí Thanh, CHKT, bán trả lần...</h4>
+                    <div class="related-meta">
+                      <div class="related-price">20.8 tỷ</div>
+                      <div class="related-area">185 m²</div>
+                    </div>
+                    <div class="related-location">
+                      <img src="./img/location.png" alt="" class="icon-location">
+                      <span>Đống Đa, Hà Nội</span>
+                    </div>
+                  </div>
+                  <div class="related-wishlist">
+                    <button class="btn-wishlist">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="related-item">
+                  <div class="related-image">
+                    <img src="./img/img4.jpg" alt="Related Property">
+                  </div>
+                  <div class="related-info">
+                    <h4>Mặt tiền 195.000.000 đống Nguyễn Thị Thập, gần chợ TPHCM, phân...</h4>
+                    <div class="related-meta">
+                      <div class="related-price">60tr tháng</div>
+                      <div class="related-area">90 m²</div>
+                    </div>
+                    <div class="related-location">
+                      <img src="./img/location.png" alt="" class="icon-location">
+                      <span>Đống Đa, Hà Nội</span>
+                    </div>
+                  </div>
+                  <div class="related-wishlist">
+                    <button class="btn-wishlist">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container pd-top">
+      <div class="footer__header">
+        <h2>
+          NhaNgonSaiGon <br />
+          Khám Phá Bất Động Sản
+        </h2>
+        <div class="direct">
+          <input type="text" placeholder="Đăng Ký Nhận Tin" />
+          <img src="./img/arrow_right.png" alt="" />
+        </div>
+      </div>
+      <div class="footer__body">
+        <div class="footer__body-items">
+          <a href="#"><img src="./img/logo_footer.png" alt="" /></a>
+          <span>© 2024 - NhaNgonSaiGon, Bản Quyền Thuộc Về Chúng Tôi</span>
+        </div>
+        <div class="footer__body-items">
+          <h5>NhaNgonSaiGon</h5>
+          <ul>
+            <li><a href="#">Chuyên Viên</a></li>
+            <li><a href="#">Khách Hàng</a></li>
+          </ul>
+        </div>
+        <div class="footer__body-items">
+          <h5>CÔNG TY</h5>
+          <ul>
+            <li><a href="#">Về Chúng Tôi</a></li>
+            <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+            <li><a href="#">Mạng Xã Hội</a></li>
+          </ul>
+        </div>
+        <div class="footer__body-items">
+          <h5>SẢN PHẨM</h5>
+          <ul>
+            <li><a href="#">Căn Hộ</a></li>
+            <li><a href="#">Cách Hoạt Động</a></li>
+          </ul>
+        </div>
+        <div class="footer__body-items">
+          <h5>DỊCH VỤ</h5>
+          <ul>
+            <li><a href="#">Cho Thuê</a></li>
+            <li><a href="#">Bán</a></li>
+            <li><a href="#">Xây Dựng</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="./js/libs/_jquery.js"></script>
+  <script type="text/javascript" src="dest/jsmain.min.js"></script>
+  <script type="text/javascript" src="dest/main.js"></script>
+</body>
+
+</html>
