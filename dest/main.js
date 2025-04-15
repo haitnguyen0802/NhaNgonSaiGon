@@ -397,3 +397,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Toggle filters on mobile
+document.addEventListener('DOMContentLoaded', function() {
+  const filterToggle = document.querySelector('.filter-toggle');
+  const filterRow = document.querySelector('.filter-row');
+  const streetSearch = document.querySelector('.street-search');
+  
+  if (filterToggle && filterRow && streetSearch) {
+    filterToggle.addEventListener('click', function() {
+      if (filterRow.style.display === 'flex' || filterRow.style.display === 'block') {
+        filterRow.style.display = 'none';
+        streetSearch.style.display = 'none';
+      } else {
+        filterRow.style.display = 'flex';
+        streetSearch.style.display = 'block';
+      }
+    });
+  }
+});

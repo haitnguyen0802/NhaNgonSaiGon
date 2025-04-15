@@ -8,7 +8,6 @@
   height: calc(100vh - var(--height-header));
   overflow: hidden;
   min-height: 500px;
-
   &-carousel {
     position: absolute !important;
     top: 0;
@@ -101,10 +100,12 @@
     }
 
     &-btn {
-      height: 70px;
+      height: 60px;
       font-family: M Reg;
       font-size: 15px;
       display: inline-flex;
+      min-width: 100%;
+      width: 100%;
 
       input,
       a {
@@ -112,6 +113,7 @@
       }
 
       input {
+        flex: 1;
         border: none;
         outline: none;
         width: 370px;
@@ -513,13 +515,14 @@
       padding-bottom: 70px;
       width: 470px;
     }
-    
+
     display: flex;
     justify-content: space-between;
   }
 
   &__filter {
     padding-bottom: 70px;
+
     select {
       padding: 10px 15px;
       border: 1px solid #ddd;
@@ -531,7 +534,7 @@
       cursor: pointer;
       outline: none;
       min-width: 180px;
-      
+
       &:hover {
         border-color: $yellow-cl;
       }
@@ -679,16 +682,16 @@
     &__content {
       flex-direction: column;
       align-items: flex-start;
-      
+
       .h3-title {
         padding-bottom: 30px;
       }
     }
-    
+
     &__filter {
       padding-bottom: 30px;
     }
-    
+
     &__items {
       grid-template-columns: repeat(2, 1fr);
 
@@ -719,7 +722,7 @@
         padding-bottom: 30px;
       }
     }
-    
+
     &__filter {
       margin: 0 auto 30px;
     }
@@ -733,7 +736,7 @@
         }
       }
     }
-    
+
     &__pagination {
       .pagination-btn {
         width: 55px;
@@ -936,6 +939,7 @@
 
   &__title {
     padding-top: 100px;
+
     .h3-content {
       max-width: 420px;
       line-height: 30px;
