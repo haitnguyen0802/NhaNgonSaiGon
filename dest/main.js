@@ -416,3 +416,173 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Chức năng lọc và tìm kiếm bất động sản
+document.addEventListener('DOMContentLoaded', function() {
+  // Lấy các phần tử
+  const searchForm = document.querySelector('.search-main');
+  const searchInput = document.querySelector('.search-input input');
+  const searchButton = document.querySelector('.search-button');
+  const districtSelect = document.querySelector('select[name="district"]');
+  const priceSelect = document.querySelector('select[name="price"]');
+  const areaSelect = document.querySelector('select[name="area"]');
+  const streetSelect = document.querySelector('select[name="street"]');
+  
+  // Đăng ký sự kiện khi click nút tìm kiếm
+  if (searchButton) {
+    searchButton.addEventListener('click', function() {
+      performSearch();
+    });
+  }
+  
+  // Đăng ký sự kiện khi nhấn Enter trong ô tìm kiếm
+  if (searchInput) {
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        performSearch();
+      }
+    });
+  }
+  
+  // Hàm thực hiện tìm kiếm
+  function performSearch() {
+    // Thu thập dữ liệu từ các bộ lọc
+    const searchParams = {
+      keyword: searchInput ? searchInput.value.trim() : '',
+      district: districtSelect ? districtSelect.value : '',
+      price: priceSelect ? priceSelect.value : '',
+      area: areaSelect ? areaSelect.value : '',
+      street: streetSelect ? streetSelect.value : ''
+    };
+    
+    // Hiển thị thông tin tìm kiếm (có thể thay bằng AJAX request trong ứng dụng thực tế)
+    console.log('Thực hiện tìm kiếm với các tham số:', searchParams);
+    
+    // Tạo URL cho trang kết quả tìm kiếm
+    const queryParams = new URLSearchParams();
+    
+    // Chỉ thêm các tham số có giá trị
+    if (searchParams.keyword) queryParams.append('keyword', searchParams.keyword);
+    if (searchParams.district) queryParams.append('district', searchParams.district);
+    if (searchParams.price) queryParams.append('price', searchParams.price);
+    if (searchParams.area) queryParams.append('area', searchParams.area);
+    if (searchParams.street) queryParams.append('street', searchParams.street);
+    
+    // Trong ứng dụng thực tế, có thể chuyển hướng đến trang kết quả
+    const searchResultsUrl = './search-results.html?' + queryParams.toString();
+    console.log('URL tìm kiếm:', searchResultsUrl);
+    
+    // Chuyển hướng đến trang kết quả tìm kiếm (bỏ comment để kích hoạt)
+    window.location.href = searchResultsUrl;
+    
+    // Thay vào đó, hiển thị thông báo tạm thời (xóa dòng này trong ứng dụng thực tế)
+    // showSearchNotification(searchParams);
+  }
+  
+  // Hiển thị thông báo tạm thời - chỉ cho mục đích demo
+  function showSearchNotification(params) {
+    // Xóa thông báo cũ nếu có
+    const oldNotification = document.querySelector('.search-notification');
+    if (oldNotification) {
+      oldNotification.remove();
+    }
+    
+    // Tạo thông báo mới
+    const notification = document.createElement('div');
+    notification.className = 'search-notification';
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #3c1818;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 5px;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 80%;
+    `;
+    
+    // Tạo nội dung thông báo
+    let notificationContent = '<h3 style="margin-top: 0;">Đang tìm kiếm:</h3><ul style="padding-left: 20px;">';
+    
+    if (params.keyword) {
+      notificationContent += `<li>Từ khóa: ${params.keyword}</li>`;
+    }
+    
+    if (params.district) {
+      const districtText = districtSelect.options[districtSelect.selectedIndex].text;
+      notificationContent += `<li>Khu vực: ${districtText}</li>`;
+    }
+    
+    if (params.price) {
+      const priceText = priceSelect.options[priceSelect.selectedIndex].text;
+      notificationContent += `<li>Giá: ${priceText}</li>`;
+    }
+    
+    if (params.area) {
+      const areaText = areaSelect.options[areaSelect.selectedIndex].text;
+      notificationContent += `<li>Diện tích: ${areaText}</li>`;
+    }
+    
+    if (params.street) {
+      const streetText = streetSelect.options[streetSelect.selectedIndex].text;
+      notificationContent += `<li>Đường: ${streetText}</li>`;
+    }
+    
+    notificationContent += '</ul>';
+    
+    if (!params.keyword && !params.district && !params.price && !params.area && !params.street) {
+      notificationContent = '<p style="margin: 0;">Vui lòng chọn ít nhất một tiêu chí tìm kiếm</p>';
+    }
+    
+    notification.innerHTML = notificationContent;
+    
+    // Thêm nút đóng
+    const closeButton = document.createElement('button');
+    closeButton.innerHTML = '×';
+    closeButton.style.cssText = `
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    `;
+    closeButton.addEventListener('click', function() {
+      notification.remove();
+    });
+    
+    notification.appendChild(closeButton);
+    
+    // Thêm thông báo vào trang
+    document.body.appendChild(notification);
+    
+    // Tự động đóng thông báo sau 5 giây
+    setTimeout(function() {
+      if (document.body.contains(notification)) {
+        notification.remove();
+      }
+    }, 5000);
+  }
+  
+  // Đăng ký sự kiện thay đổi cho các select để cập nhật UI khi người dùng chọn
+  const allSelects = [districtSelect, priceSelect, areaSelect, streetSelect];
+  
+  allSelects.forEach(select => {
+    if (select) {
+      select.addEventListener('change', function() {
+        // Hiển thị visual feedback khi người dùng chọn một tùy chọn
+        if (this.value) {
+          this.classList.add('selected');
+        } else {
+          this.classList.remove('selected');
+        }
+      });
+    }
+  });
+});

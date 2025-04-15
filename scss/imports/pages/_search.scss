@@ -102,6 +102,11 @@
       outline: none;
       transition: all $t ease-in-out;
     }
+    
+    &.selected {
+      background-color: rgba(211, 22, 37, 0.2);
+      font-weight: bold;
+    }
 
     option {
       background-color: #3c1818;

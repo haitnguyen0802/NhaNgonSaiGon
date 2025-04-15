@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Kết quả tìm kiếm - NhaNgonSaiGon</title>
+  <link rel="icon" href="favicon.ico" />
+  <meta name="title" content="" />
+  <meta name="description" content="" />
+
+  <!-- meta facebook -->
+  <meta property="og:locale" content="vi" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:image" content="" />
+
+  <link rel="stylesheet" href="dest/style.min.css" />
+  <link rel="stylesheet" href="dest/fonts.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</head>
+
+<body class="search-page">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__menu">
+        <div class="header__menu-logo">
+          <a href="./"><img src="#" alt="Nhà Ngon Sài Gòn" /></a>
+        </div>
+        <ul>
+          <li><a href="./index.html#appartments">Nhà/Đất Hot</a></li>
+          <li><a href="./index.html#hiw">Nhà/Đất Nổi Bật</a></li>
+          <li><a href="./index.html#agents">Dự án</a></li>
+          <li class="dots-menu-icon">
+            <a onclick="toggleDropdown(event)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path
+                  d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="./index.html#agents">Tin tức</a></li>
+                <li><a href="./index.html#awesome">Wiki BĐS</a></li>
+                <li><a href="./index.html#awesome">Phân tích đánh giá</a></li>
+                <li><a href="./index.html#awesome">Liên hệ</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="header__cta">
+        <div class="header__cta-menu">
+          <a href="#">Đăng nhập</a>
+          <span class="line"></span>
+          <a href="#">Đăng ký</a>
+        </div>
+        <div class="header__cta-btn">
+          <a href="#">Đăng tin</a>
+        </div>
+      </div>
+      <div class="header__btnmenu"><span></span></div>
+      <nav class="nav">
+        <div class="nav__cta">
+          <div class="nav__cta-heart">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+              <path
+                d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181">
+              </path>
+            </svg>
+          </div>
+          <div class="nav__cta-btn">
+            <a href="#">Đăng tin</a>
+          </div>
+          <div class="nav__cta-menu">
+            <a href="#">Đăng nhập</a>
+            <span class="line"></span>
+            <a href="#">Đăng ký</a>
+          </div>
+        </div>
+        <ul>
+          <li><a href="./index.html#company">Nhà đất bán</a></li>
+          <li><a href="./index.html#appartments">Nhà đất cho thuê</a></li>
+          <li><a href="./index.html#hiw">Dự án</a></li>
+          <li><a href="./index.html#agents">Tin tức</a></li>
+          <li><a href="./index.html#awesome">Wiki BĐS</a></li>
+          <li><a href="./index.html#awesome">Phân tích đánh giá</a></li>
+          <li><a href="./index.html#awesome">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="mainwrapper">
+    <section class="search-results-section">
+      <div class="container">
+        <div class="search-heading">
+          <h1>Kết quả tìm kiếm</h1>
+          <div class="search-summary" id="searchSummary">
+            <!-- Sẽ được cập nhật bằng JavaScript -->
+          </div>
+        </div>
+
+        <div class="search-content">
+          <div class="search-filters">
+            <div class="search-filters-header">
+              <h3>Bộ lọc tìm kiếm</h3>
+              <button class="filter-toggle-mobile">
+                <span>Lọc</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+            </div>
+            
+            <div class="search-filters-body">
+              <div class="filter-group">
+                <label>Quận/Huyện</label>
+                <select name="district" id="filterDistrict">
+                  <option value="">Tất cả Quận/Huyện</option>
+                  <option value="quan-1">Quận 1</option>
+                  <option value="quan-2">Quận 2</option>
+                  <option value="quan-3">Quận 3</option>
+                  <option value="quan-4">Quận 4</option>
+                  <option value="quan-5">Quận 5</option>
+                  <option value="quan-6">Quận 6</option>
+                  <option value="quan-7">Quận 7</option>
+                  <option value="quan-8">Quận 8</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label>Mức giá</label>
+                <select name="price" id="filterPrice">
+                  <option value="">Tất cả mức giá</option>
+                  <option value="duoi-1-ty">Dưới 1 tỷ</option>
+                  <option value="1-2-ty">1 - 2 tỷ</option>
+                  <option value="2-3-ty">2 - 3 tỷ</option>
+                  <option value="3-5-ty">3 - 5 tỷ</option>
+                  <option value="5-7-ty">5 - 7 tỷ</option>
+                  <option value="7-10-ty">7 - 10 tỷ</option>
+                  <option value="tren-10-ty">Trên 10 tỷ</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label>Diện tích</label>
+                <select name="area" id="filterArea">
+                  <option value="">Tất cả diện tích</option>
+                  <option value="duoi-30m2">Dưới 30 m²</option>
+                  <option value="30-50m2">30 - 50 m²</option>
+                  <option value="50-80m2">50 - 80 m²</option>
+                  <option value="80-100m2">80 - 100 m²</option>
+                  <option value="100-150m2">100 - 150 m²</option>
+                  <option value="150-200m2">150 - 200 m²</option>
+                  <option value="tren-200m2">Trên 200 m²</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label>Tên đường</label>
+                <select name="street" id="filterStreet">
+                  <option value="">Tất cả đường</option>
+                  <option value="tran-van-muoi">Trần Văn Mười</option>
+                  <option value="le-thi-anh">Lê Thị Ánh</option>
+                  <option value="nguyen-anh-thu">Nguyễn Ảnh Thủ</option>
+                  <option value="trung-chanh">Trung Chánh</option>
+                  <option value="cach-mang-thang-8">Cách mạng Tháng 8</option>
+                  <option value="nguyen-van-cu">Nguyễn Văn Cừ</option>
+                  <option value="mac-dinh-chi">Mạc Đỉnh Chi</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label>Sắp xếp theo</label>
+                <select name="sort" id="sortResults">
+                  <option value="latest">Mới nhất</option>
+                  <option value="price_low">Giá thấp đến cao</option>
+                  <option value="price_high">Giá cao đến thấp</option>
+                  <option value="area_low">Diện tích nhỏ đến lớn</option>
+                  <option value="area_high">Diện tích lớn đến nhỏ</option>
+                </select>
+              </div>
+              
+              <button class="btn-apply-filter">Áp dụng</button>
+            </div>
+          </div>
+          
+          <div class="search-results">
+            <div class="search-results-count">
+              <span id="resultCount">Tìm thấy 12 kết quả</span>
+              <select id="viewMode">
+                <option value="grid">Hiển thị dạng lưới</option>
+                <option value="list">Hiển thị dạng danh sách</option>
+              </select>
+            </div>
+            
+            <div class="search-results-items">
+              <!-- Các sản phẩm sẽ được JavaScript tạo động -->
+            </div>
+            
+            <div class="search-results-pagination">
+              <!-- Phân trang sẽ được JavaScript tạo động -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container pd-top">
+      <div class="footer__header">
+        <h2>
+          NhaNgonSaiGon <br />
+          Khám Phá Bất Động Sản
+        </h2>
+        <div class="direct">
+          <input type="text" placeholder="Đăng Ký Nhận Tin" />
+          <img src="./img/arrow_right.png" alt="" />
+        </div>
+      </div>
+      <div class="footer__body">
+        <div class="footer__body-items">
+          <a href="#"><img src="./img/logo_footer.png" alt="" /></a>
+          <span>© 2024 - NhaNgonSaiGon, Bản Quyền Thuộc Về Chúng Tôi</span>
+        </div>
+        <div class="footer__body-items">
+          <h5>NhaNgonSaiGon</h5>
+          <ul>
+            <li><a href="#">Chuyên Viên</a></li>
+            <li><a href="#">Khách Hàng</a></li>
+          </ul>
+        </div>
+        <div class="footer__body-items">
+          <h5>CÔNG TY</h5>
+          <ul>
+            <li><a href="#">Về Chúng Tôi</a></li>
+            <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+            <li><a href="#">Mạng Xã Hội</a></li>
+          </ul>
+        </div>
+        <div class="footer__body-items">
+          <h5>SẢN PHẨM</h5>
+          <ul>
+            <li><a href="#">Căn Hộ</a></li>
+            <li><a href="#">Cách Hoạt Động</a></li>
+          </ul>
+        </div>
+        <div class="footer__body-items">
+          <h5>DỊCH VỤ</h5>
+          <ul>
+            <li><a href="#">Cho Thuê</a></li>
+            <li><a href="#">Bán</a></li>
+            <li><a href="#">Xây Dựng</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script type="text/javascript" src="./js/libs/_jquery.js"></script>
+  <script type="text/javascript" src="dest/jsmain.min.js"></script>
+  <script type="text/javascript" src="dest/main.js"></script>
+  <script type="text/javascript">
+    // JavaScript cho trang kết quả tìm kiếm
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lấy tham số từ URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const keyword = urlParams.get('keyword');
+      const district = urlParams.get('district');
+      const price = urlParams.get('price');
+      const area = urlParams.get('area');
+      const street = urlParams.get('street');
+      const pageParam = urlParams.get('page');
+      
+      // Đặt số lượng sản phẩm trên mỗi trang
+      const itemsPerPage = 9;
+      let currentPage = pageParam ? parseInt(pageParam) : 1;
+      
+      // Danh sách sản phẩm mẫu - Chỉ giữ nguyên ở JavaScript để sử dụng
+      const sampleProducts = [
+        {
+          id: 1,
+          title: "Căn hộ cao cấp Quận 1, 3 phòng ngủ",
+          location: "Quận 1, TP.HCM",
+          price: "3.5 tỷ",
+          bathrooms: 2,
+          bedrooms: 3,
+          area: "85 m²",
+          image: "./img/img1.jpg",
+          tag: "new",
+          tagText: "Mới",
+          agent: "Nguyễn Văn A"
+        },
+        {
+          id: 2,
+          title: "Nhà phố liền kề Quận 7, thiết kế hiện đại",
+          location: "Quận 7, TP.HCM",
+          price: "5.2 tỷ",
+          bathrooms: 3,
+          bedrooms: 4,
+          area: "120 m²",
+          image: "./img/img2.jpg",
+          tag: "discount",
+          tagText: "-400TR",
+          agent: "Trần Thị B"
+        },
+        {
+          id: 3,
+          title: "Căn hộ The Vista, 2 phòng ngủ, view đẹp",
+          location: "Quận 2, TP.HCM",
+          price: "2.8 tỷ",
+          bathrooms: 2,
+          bedrooms: 2,
+          area: "65 m²",
+          image: "./img/img3.jpg",
+          tag: "new",
+          tagText: "Mới",
+          agent: "Lê Văn C"
+        },
+        {
+          id: 4,
+          title: "Biệt thự Phú Mỹ Hưng, nội thất cao cấp",
+          location: "Quận 7, TP.HCM",
+          price: "12.5 tỷ",
+          bathrooms: 4,
+          bedrooms: 5,
+          area: "320 m²",
+          image: "./img/img4.jpg",
+          tag: "hot",
+          tagText: "Hot",
+          agent: "Nguyễn Thị D"
+        },
+        {
+          id: 5,
+          title: "Nhà phố mặt tiền đường Nguyễn Văn Cừ",
+          location: "Quận 5, TP.HCM",
+          price: "8.9 tỷ",
+          bathrooms: 3,
+          bedrooms: 4,
+          area: "180 m²",
+          image: "./img/img5.jpg",
+          tag: "discount",
+          tagText: "-600TR",
+          agent: "Trần Văn E"
+        },
+        {
+          id: 6,
+          title: "Căn hộ Sunrise City, full nội thất",
+          location: "Quận 7, TP.HCM",
+          price: "4.2 tỷ",
+          bathrooms: 2,
+          bedrooms: 3,
+          area: "105 m²",
+          image: "./img/img6.jpg",
+          tag: "discount",
+          tagText: "-200TR",
+          agent: "Phạm Văn F"
+        },
+        {
+          id: 7,
+          title: "Căn hộ 2PN Vinhomes Central Park",
+          location: "Bình Thạnh, TP.HCM",
+          price: "4.8 tỷ",
+          bathrooms: 2,
+          bedrooms: 2,
+          area: "75 m²",
+          image: "./img/img1.jpg",
+          tag: "new",
+          tagText: "Mới",
+          agent: "Nguyễn Văn G"
+        },
+        {
+          id: 8,
+          title: "Nhà phố khu Tên Lửa, mới xây",
+          location: "Bình Tân, TP.HCM",
+          price: "4.5 tỷ",
+          bathrooms: 3,
+          bedrooms: 4,
+          area: "120 m²",
+          image: "./img/img2.jpg",
+          tag: "discount",
+          tagText: "-300TR",
+          agent: "Trần Thị H"
+        },
+        {
+          id: 9,
+          title: "Căn hộ Landmark 81, tầng cao, view đẹp",
+          location: "Bình Thạnh, TP.HCM",
+          price: "7.8 tỷ",
+          bathrooms: 2,
+          bedrooms: 3,
+          area: "95 m²",
+          image: "./img/img3.jpg",
+          tag: "hot",
+          tagText: "Hot",
+          agent: "Lê Văn I"
+        },
+        {
+          id: 10,
+          title: "Nhà phố mặt tiền đường Cách Mạng Tháng 8",
+          location: "Quận 3, TP.HCM",
+          price: "9.5 tỷ",
+          bathrooms: 3,
+          bedrooms: 4,
+          area: "155 m²",
+          image: "./img/img4.jpg",
+          tag: "new",
+          tagText: "Mới",
+          agent: "Nguyễn Thị J"
+        },
+        {
+          id: 11,
+          title: "Căn hộ Masteri An Phú, view sông",
+          location: "Quận 2, TP.HCM",
+          price: "3.4 tỷ",
+          bathrooms: 2,
+          bedrooms: 2,
+          area: "70 m²",
+          image: "./img/img5.jpg",
+          tag: "discount",
+          tagText: "-200TR",
+          agent: "Trần Văn K"
+        },
+        {
+          id: 12,
+          title: "Biệt thự vườn Thảo Điền, hồ bơi riêng",
+          location: "Quận 2, TP.HCM",
+          price: "18.5 tỷ",
+          bathrooms: 4,
+          bedrooms: 5,
+          area: "450 m²",
+          image: "./img/img6.jpg",
+          tag: "hot",
+          tagText: "Hot",
+          agent: "Phạm Thị L"
+        },
+        {
+          id: 13,
+          title: "Căn hộ officetel The Sun Avenue",
+          location: "Quận 2, TP.HCM",
+          price: "2.2 tỷ",
+          bathrooms: 1,
+          bedrooms: 1,
+          area: "45 m²",
+          image: "./img/img1.jpg",
+          tag: "new",
+          tagText: "Mới",
+          agent: "Nguyễn Văn M"
+        },
+        {
+          id: 14,
+          title: "Nhà phố khu Trung Sơn, nội thất đẹp",
+          location: "Bình Chánh, TP.HCM",
+          price: "6.8 tỷ",
+          bathrooms: 3,
+          bedrooms: 4,
+          area: "160 m²",
+          image: "./img/img2.jpg",
+          tag: "discount",
+          tagText: "-500TR",
+          agent: "Trần Thị N"
+        },
+        {
+          id: 15,
+          title: "Căn hộ Feliz En Vista, tháp Berdaz",
+          location: "Quận 2, TP.HCM",
+          price: "5.5 tỷ",
+          bathrooms: 2,
+          bedrooms: 3,
+          area: "106 m²",
+          image: "./img/img3.jpg",
+          tag: "hot",
+          tagText: "Hot",
+          agent: "Lê Văn O"
+        },
+        {
+          id: 16,
+          title: "Nhà mặt phố Lê Văn Sỹ, kinh doanh tốt",
+          location: "Quận 3, TP.HCM",
+          price: "15.2 tỷ",
+          bathrooms: 3,
+          bedrooms: 4,
+          area: "200 m²",
+          image: "./img/img4.jpg",
+          tag: "new",
+          tagText: "Mới",
+          agent: "Nguyễn Thị P"
+        },
+        {
+          id: 17,
+          title: "Căn hộ D'Edge Thảo Điền, full nội thất",
+          location: "Quận 2, TP.HCM",
+          price: "6.7 tỷ",
+          bathrooms: 2,
+          bedrooms: 2,
+          area: "90 m²",
+          image: "./img/img5.jpg",
+          tag: "discount",
+          tagText: "-300TR",
+          agent: "Trần Văn Q"
+        },
+        {
+          id: 18,
+          title: "Nhà phố khu Him Lam Kênh Tẻ",
+          location: "Quận 7, TP.HCM",
+          price: "14.5 tỷ",
+          bathrooms: 4,
+          bedrooms: 5,
+          area: "200 m²",
+          image: "./img/img6.jpg",
+          tag: "hot",
+          tagText: "Hot",
+          agent: "Phạm Thị R"
+        },
+        {
+          id: 19,
+          title: "Căn hộ Metropole Thủ Thiêm, view sông",
+          location: "Quận 2, TP.HCM",
+          price: "8.5 tỷ",
+          bathrooms: 2,
+          bedrooms: 3,
+          area: "116 m²",
+          image: "./img/img1.jpg",
+          tag: "new",
+          tagText: "Mới",
+          agent: "Nguyễn Văn S"
+        },
+        {
+          id: 20,
+          title: "Nhà phố Park Riverside, đã có sổ",
+          location: "Quận 9, TP.HCM",
+          price: "7.2 tỷ",
+          bathrooms: 3,
+          bedrooms: 4,
+          area: "190 m²",
+          image: "./img/img2.jpg",
+          tag: "discount",
+          tagText: "-400TR",
+          agent: "Trần Thị T"
+        },
+        {
+          id: 21,
+          title: "Căn hộ Gateway Thảo Điền, tầng cao",
+          location: "Quận 2, TP.HCM",
+          price: "4.9 tỷ",
+          bathrooms: 2,
+          bedrooms: 2,
+          area: "80 m²",
+          image: "./img/img3.jpg",
+          tag: "hot",
+          tagText: "Hot",
+          agent: "Lê Văn U"
+        },
+        {
+          id: 22,
+          title: "Biệt thự compound Lucasta Khang Điền",
+          location: "Quận 9, TP.HCM",
+          price: "11.8 tỷ",
+          bathrooms: 4,
+          bedrooms: 5,
+          area: "300 m²",
+          image: "./img/img4.jpg",
+          tag: "new",
+          tagText: "Mới",
+          agent: "Nguyễn Thị V"
+        },
+      ];
+      
+      // Tính toán số trang
+      const totalPages = Math.ceil(sampleProducts.length / itemsPerPage);
+      
+      // Cập nhật bộ lọc từ URL
+      function updateFilterFromUrl() {
+        if (district) {
+          document.getElementById('filterDistrict').value = district;
+        }
+        if (price) {
+          document.getElementById('filterPrice').value = price;
+        }
+        if (area) {
+          document.getElementById('filterArea').value = area;
+        }
+        if (street) {
+          document.getElementById('filterStreet').value = street;
+        }
+      }
+      
+      // Hiển thị thông tin tìm kiếm
+      function updateSearchSummary() {
+        const summaryEl = document.getElementById('searchSummary');
+        if (!summaryEl) return;
+        
+        let summaryText = 'Kết quả tìm kiếm';
+        
+        if (keyword) {
+          summaryText += ` cho "${keyword}"`;
+        }
+        
+        const filters = [];
+        
+        if (district) {
+          const districtEl = document.getElementById('filterDistrict');
+          const districtText = districtEl && districtEl.options[districtEl.selectedIndex].text;
+          if (districtText && districtText !== 'Tất cả Quận/Huyện') {
+            filters.push(`tại ${districtText}`);
+          }
+        }
+        
+        if (price) {
+          const priceEl = document.getElementById('filterPrice');
+          const priceText = priceEl && priceEl.options[priceEl.selectedIndex].text;
+          if (priceText && priceText !== 'Tất cả mức giá') {
+            filters.push(`giá ${priceText}`);
+          }
+        }
+        
+        if (area) {
+          const areaEl = document.getElementById('filterArea');
+          const areaText = areaEl && areaEl.options[areaEl.selectedIndex].text;
+          if (areaText && areaText !== 'Tất cả diện tích') {
+            filters.push(`diện tích ${areaText}`);
+          }
+        }
+        
+        if (street) {
+          const streetEl = document.getElementById('filterStreet');
+          const streetText = streetEl && streetEl.options[streetEl.selectedIndex].text;
+          if (streetText && streetText !== 'Tất cả đường') {
+            filters.push(`trên đường ${streetText}`);
+          }
+        }
+        
+        if (filters.length > 0) {
+          summaryText += ` ${filters.join(', ')}`;
+        }
+        
+        summaryEl.textContent = summaryText;
+      }
+      
+      // Cập nhật URL khi áp dụng bộ lọc
+      document.querySelector('.btn-apply-filter').addEventListener('click', function() {
+        const newDistrict = document.getElementById('filterDistrict').value;
+        const newPrice = document.getElementById('filterPrice').value;
+        const newArea = document.getElementById('filterArea').value;
+        const newStreet = document.getElementById('filterStreet').value;
+        const sort = document.getElementById('sortResults').value;
+        
+        const params = new URLSearchParams();
+        if (keyword) params.append('keyword', keyword);
+        if (newDistrict) params.append('district', newDistrict);
+        if (newPrice) params.append('price', newPrice);
+        if (newArea) params.append('area', newArea);
+        if (newStreet) params.append('street', newStreet);
+        if (sort) params.append('sort', sort);
+        
+        // Trở về trang 1 khi lọc
+        params.append('page', '1');
+        
+        // Cập nhật URL
+        window.location.href = `${window.location.pathname}?${params.toString()}`;
+      });
+      
+      // Tạo HTML cho một mục sản phẩm
+      function createProductItem(product) {
+        return `
+          <div class="property-item">
+            ${product.tag ? `<div class="label ${product.tag}">${product.tagText}</div>` : ''}
+            <div class="img">
+              <img src="${product.image}" alt="${product.title}" />
+            </div>
+            <div class="info">
+              <h4 class="h4-title">${product.title}</h4>
+              <div class="location">${product.location}</div>
+              <div class="descript">
+                <div class="price">${product.price}</div>
+                <div class="wrap">
+                  <div class="wrap-one">
+                    <img src="./img/shower_ic.png" alt="" />
+                    <span>${product.bathrooms} Phòng tắm</span>
+                  </div>
+                  <div class="wrap-sec">
+                    <img src="./img/car_ic.png" alt="" />
+                    <span>${product.bedrooms} Phòng ngủ</span>
+                  </div>
+                  <div class="wrap-third">
+                    <img src="./img/area_ic.png" alt="" />
+                    <span>${product.area}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="property-footer">
+                <div class="agent">Đăng bởi: ${product.agent}</div>
+                <button class="btn-details">Xem chi tiết</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      
+      // Hiển thị sản phẩm theo trang hiện tại
+      function displayProducts() {
+        const resultsContainer = document.querySelector('.search-results-items');
+        if (!resultsContainer) return;
+        
+        // Tính toán các sản phẩm sẽ hiển thị trên trang hiện tại
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = Math.min(startIndex + itemsPerPage, sampleProducts.length);
+        const currentProducts = sampleProducts.slice(startIndex, endIndex);
+        
+        // Tạo HTML cho các sản phẩm
+        let productsHTML = '';
+        currentProducts.forEach(product => {
+          productsHTML += createProductItem(product);
+        });
+        
+        // Cập nhật nội dung
+        resultsContainer.innerHTML = productsHTML;
+        
+        // Cập nhật số lượng kết quả
+        document.getElementById('resultCount').textContent = `Tìm thấy ${sampleProducts.length} kết quả`;
+        
+        // Đặt view mode
+        if (resultsContainer.classList.contains('list-view')) {
+          document.getElementById('viewMode').value = 'list';
+        } else {
+          resultsContainer.classList.add('grid-view');
+          document.getElementById('viewMode').value = 'grid';
+        }
+      }
+      
+      // Cập nhật phân trang
+      function updatePagination() {
+        const paginationContainer = document.querySelector('.search-results-pagination');
+        if (!paginationContainer) return;
+        
+        let paginationHTML = '';
+        
+        // Nút trang trước
+        paginationHTML += `
+          <button class="pagination-btn prev ${currentPage === 1 ? 'disabled' : ''}" ${currentPage === 1 ? 'disabled' : ''}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="#1a3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        `;
+        
+        // Các nút trang
+        const maxVisiblePages = 5;
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+        
+        // Điều chỉnh startPage nếu endPage đã đạt totalPages
+        if (endPage === totalPages) {
+          startPage = Math.max(1, endPage - maxVisiblePages + 1);
+        }
+        
+        // Thêm nút trang đầu nếu không hiển thị
+        if (startPage > 1) {
+          paginationHTML += `<button class="pagination-btn" data-page="1">1</button>`;
+          if (startPage > 2) {
+            paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+          }
+        }
+        
+        // Thêm các nút trang
+        for (let i = startPage; i <= endPage; i++) {
+          paginationHTML += `<button class="pagination-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+        }
+        
+        // Thêm nút trang cuối nếu không hiển thị
+        if (endPage < totalPages) {
+          if (endPage < totalPages - 1) {
+            paginationHTML += `<span class="pagination-ellipsis">...</span>`;
+          }
+          paginationHTML += `<button class="pagination-btn" data-page="${totalPages}">${totalPages}</button>`;
+        }
+        
+        // Nút trang sau
+        paginationHTML += `
+          <button class="pagination-btn next ${currentPage === totalPages ? 'disabled' : ''}" ${currentPage === totalPages ? 'disabled' : ''}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M9 6L15 12L9 18" stroke="#1a3a6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        `;
+        
+        // Cập nhật DOM
+        paginationContainer.innerHTML = paginationHTML;
+        
+        // Đăng ký sự kiện cho các nút phân trang
+        paginationContainer.querySelectorAll('.pagination-btn').forEach(button => {
+          if (button.classList.contains('prev')) {
+            button.addEventListener('click', () => {
+              if (currentPage > 1) goToPage(currentPage - 1);
+            });
+          } else if (button.classList.contains('next')) {
+            button.addEventListener('click', () => {
+              if (currentPage < totalPages) goToPage(currentPage + 1);
+            });
+          } else {
+            button.addEventListener('click', () => {
+              const page = parseInt(button.getAttribute('data-page'));
+              goToPage(page);
+            });
+          }
+        });
+      }
+      
+      // Điều hướng đến trang cụ thể
+      function goToPage(page) {
+        if (page < 1 || page > totalPages || page === currentPage) return;
+        
+        const params = new URLSearchParams(window.location.search);
+        params.set('page', page.toString());
+        window.location.href = `${window.location.pathname}?${params.toString()}`;
+      }
+      
+      // Xử lý hiển thị lưới/danh sách
+      document.getElementById('viewMode').addEventListener('change', function() {
+        const resultsContainer = document.querySelector('.search-results-items');
+        
+        if (this.value === 'list') {
+          resultsContainer.classList.add('list-view');
+          resultsContainer.classList.remove('grid-view');
+        } else {
+          resultsContainer.classList.add('grid-view');
+          resultsContainer.classList.remove('list-view');
+        }
+      });
+      
+      // Toggle filter trên mobile
+      document.querySelector('.filter-toggle-mobile').addEventListener('click', function() {
+        document.querySelector('.search-filters-body').classList.toggle('active');
+      });
+      
+      // Khởi tạo
+      updateFilterFromUrl();
+      updateSearchSummary();
+      displayProducts();
+      updatePagination();
+    });
+  </script>
+</body>
+
+</html> 

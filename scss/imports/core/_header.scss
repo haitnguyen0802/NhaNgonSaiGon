@@ -8,6 +8,7 @@
   transition: 0.4s transform;
   z-index: 111;
   position: fixed;
+
   // &.activeHeader {
   //   transform: translate(0, 0);
   //   transition: 0.4s transform;
@@ -29,6 +30,8 @@
         justify-content: space-between;
 
         &-logo {
+          align-self: center;
+
           a {
             img {
               width: 50%;
@@ -622,6 +625,7 @@
             }
 
             &:hover {
+
               &::after,
               &::before {
                 position: absolute;
@@ -641,7 +645,7 @@
           }
         }
       }
-      
+
       &__cta {
         display: none;
       }
@@ -741,7 +745,7 @@
           }
         }
       }
-      
+
       &__cta {
         display: flex;
         flex-direction: column;
@@ -817,7 +821,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          
+
           a {
             padding: 10px 15px;
             width: 100%;
